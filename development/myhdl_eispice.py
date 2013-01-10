@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Combined MyHDL and eispice Simulation
 """
@@ -35,15 +35,15 @@ class EispicePort(eispice.PyB):
  
     def model(self, vP, vN, time):
         global catchup, eispice_time, devicecnt, catchedupcnt
-        if debug: print eispice_time,"Eispice Interface callback"
+        if debug: print(eispice_time,"Eispice Interface callback")
         eispice_time = time
  
         if myhdl_time==0:
-            if debug: print "eispice: waiting for myhdl start"
+            if debug: print("eispice: waiting for myhdl start")
             return self.output
  
         if (eispice_time <  myhdl_time) and (myhdl_time - eispice_time)<myhdl_timestep:
-            if debug: print "eispice: not yet reached myhdl time"
+            if debug: print("eispice: not yet reached myhdl time")
             catchup.clear()
             return self.output
  
@@ -53,7 +53,7 @@ class EispicePort(eispice.PyB):
             continue_sim.clear()
             catchup.set()
             catchedupcnt=devicecnt
-            if debug: print "eispice: catched up"
+            if debug: print("eispice: catched up")
         self.output=self.myhdl(vP,vN,time)
         return self.output
  
@@ -62,13 +62,13 @@ class EispicePort(eispice.PyB):
  
  
 def triggerout(vP,vN,time):
-        if debug: print "triggerout",clk.val," time=",time
+        if debug: print("triggerout",clk.val," time=",time)
         output = float(clk.val)
         adc.next = 2**15+int(vP-vN)
         return output
  
 def detectorout(vP,vN,time):
-        if debug: print "detectorout",detector.val,"time=",time
+        if debug: print("detectorout",detector.val,"time=",time)
         return 100*float(detector.val)
  
 class EispiceThread(threading.Thread):
@@ -97,7 +97,7 @@ class EispiceThread(threading.Thread):
  
         ### plotting the results ###
         eispice.plot(cir)
-        print "Eispice Simulation finished"
+        print("Eispice Simulation finished")
         catchup.set()
         eispice_finished=1
            
@@ -126,16 +126,16 @@ def mixedmode():
     def timer():
         global myhdl_time
         myhdl_time+=myhdl_timestep
-        if debug: print myhdl_time,"myhdl:Waiting for eispice to catch up"
+        if debug: print(myhdl_time,"myhdl:Waiting for eispice to catch up")
         if not eispice_finished:
             catchup.wait()
             catchup.clear()
             continue_sim.set()
-        if debug: print "myhdl: got catchup notify"
+        if debug: print("myhdl: got catchup notify")
  
     ### Starting the eispice thread ###
     eispice_thread = EispiceThread()
     Simulation(instances()).run(int(simulationlen/myhdl_timestep))
-    print "Simulation finished"
+    print("Simulation finished")
  
 mixedmode()

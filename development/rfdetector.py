@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 RF detector from the skyworks application note:
 http://www.skyworksinc.com/products_display_item.asp?did=2064

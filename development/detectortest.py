@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Test Circuit and Program to test rfdetector.py
 """
@@ -13,9 +13,9 @@ uavg = []
 dbms = arange(-30.0,10,2.5)
 #pl.ion()
 for dbm in dbms:
-    print dbm
+    print(dbm)
     emk = 2 * sqrt( 10**((dbm-30)/10) * 50.0)
-    print emk
+    print(emk)
     cir = Circuit()
     cir.detector = Detector("rf","video")
     cir.generator = V("emk",0,0,Sin(0,emk,500e6))

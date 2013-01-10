@@ -13,4 +13,4 @@ cct.tran('0.5n', '100n')
 
 eispice.plot(cct)
 
-print "%s... Pass" % cct.title
+print("%s... Pass" % cct.title)

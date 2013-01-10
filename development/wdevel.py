@@ -34,7 +34,7 @@ def tester():
 	Z = []
 
 	#~ print scipy.sqrt(C0/L0)
-	print scipy.linalg.inv(R0)*(1/length)
+	print(scipy.linalg.inv(R0)*(1/length))
 
 	#~ for k in range(0,K):
 		#~ fk.append(fK * (1 - scipy.cos((scipy.pi*k)/(2*(K-1)))))

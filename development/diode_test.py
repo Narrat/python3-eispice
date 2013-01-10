@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Test Circuit and Program to test rfdetector.py
 """
@@ -19,4 +19,4 @@ cir.tran("0.005n",1.2525e-9)
 #~ plot_current(cir, 'Vmeas')
 
 for (t, i) in cir.current('Vmeas'):
-	print "%e %e" % (t, i)
+	print("%e %e" % (t, i))

@@ -6,8 +6,8 @@ M = 0.4
 Vd = FC*VJ*0.1
 
 Cj = (CJO/(1-FC)**(1+M))*(1-FC*(1+M)+(M*Vd)/VJ)
-print Cj
+print(Cj)
 
 Cj = CJO/(1-Vd/VJ)**M
-print Cj
+print(Cj)
 

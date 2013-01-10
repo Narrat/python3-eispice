@@ -25,9 +25,9 @@ for i in range(0,len(T)):
 
 for i in range(0,len(T)-1):
 	if V[i] < 0.2 and V[i+1] > 0.2:
-		print T[i]
+		print(T[i])
 	if V[i] < 0.8 and V[i+1] > 0.8:
-		print T[i]
+		print(T[i])
 
 pylab.plot(T,V)
 pylab.show()

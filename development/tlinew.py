@@ -34,5 +34,5 @@ cct.Rl2 = device.R('vo2', GND, '10k')
 cct.tran('0.5n', '2n')
 eispice.plot(cct)
 
-print cct.v['vo1'](0)
-print cct.v['vo2'](0)
+print(cct.v['vo1'](0))
+print(cct.v['vo2'](0))
