@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 from distutils.core import setup, Extension
 from distutils.sysconfig import get_python_lib, get_python_inc
