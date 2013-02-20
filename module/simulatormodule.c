@@ -60,7 +60,8 @@ static PyMemberDef pwMembers[] = {
 static void pwDestroy(pw_ *r)
 {
 	Py_XDECREF(r->pw);
-	r->ob_type->tp_free((PyObject*)r);
+	//r->ob_type->tp_free((PyObject*)r);
+	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
 }
 
 /*---------------------------------------------------------------------------*/
@@ -104,7 +105,7 @@ static int pwlInit(pw_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject pwlType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.pw",
 	.tp_basicsize = sizeof(pw_),
 	.tp_dealloc = (destructor)pwDestroy,
@@ -118,7 +119,7 @@ static PyTypeObject pwlType = {
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject pwcType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.pw",
 	.tp_basicsize = sizeof(pw_),
 	.tp_dealloc = (destructor)pwDestroy,
@@ -157,7 +158,8 @@ static PyMemberDef sffmMembers[] = {
 
 static void sffmDestroy(sffm_ *r)
 {
-	r->ob_type->tp_free((PyObject*)r);
+	//r->ob_type->tp_free((PyObject*)r);
+	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
 }
 
 /*---------------------------------------------------------------------------*/
@@ -179,7 +181,7 @@ static int sffmInit(sffm_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject sffmType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.sffm",
 	.tp_basicsize = sizeof(sffm_),
 	.tp_dealloc = (destructor)sffmDestroy,
@@ -220,7 +222,8 @@ static PyMemberDef expMembers[] = {
 
 static void expDestroy(exp_ *r)
 {
-	r->ob_type->tp_free((PyObject*)r);
+	//r->ob_type->tp_free((PyObject*)r);
+	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
 }
 
 /*---------------------------------------------------------------------------*/
@@ -243,7 +246,7 @@ static int expInit(exp_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject expType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.exp",
 	.tp_basicsize = sizeof(exp_),
 	.tp_dealloc = (destructor)expDestroy,
@@ -286,7 +289,8 @@ static PyMemberDef pulseMembers[] = {
 
 static void pulseDestroy(pulse_ *r)
 {
-	r->ob_type->tp_free((PyObject*)r);
+	//r->ob_type->tp_free((PyObject*)r);
+	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
 }
 
 /*---------------------------------------------------------------------------*/
@@ -310,7 +314,7 @@ static int pulseInit(pulse_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject pulseType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.pulse",
 	.tp_basicsize = sizeof(pulse_),
 	.tp_dealloc = (destructor)pulseDestroy,
@@ -353,7 +357,8 @@ static PyMemberDef gaussMembers[] = {
 
 static void gaussDestroy(gauss_ *r)
 {
-	r->ob_type->tp_free((PyObject*)r);
+	//r->ob_type->tp_free((PyObject*)r);
+	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
 }
 
 /*---------------------------------------------------------------------------*/
@@ -377,7 +382,7 @@ static int gaussInit(gauss_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject gaussType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.gauss",
 	.tp_basicsize = sizeof(gauss_),
 	.tp_dealloc = (destructor)gaussDestroy,
@@ -416,7 +421,8 @@ static PyMemberDef sinMembers[] = {
 
 static void sinDestroy(sin_ *r)
 {
-	r->ob_type->tp_free((PyObject*)r);
+	//r->ob_type->tp_free((PyObject*)r);
+	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
 }
 
 /*---------------------------------------------------------------------------*/
@@ -438,7 +444,7 @@ static int sinInit(sin_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject sinType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.sin",
 	.tp_basicsize = sizeof(sin_),
 	.tp_dealloc = (destructor)sinDestroy,
@@ -479,7 +485,8 @@ static void deviceDestroy(device_ *r)
 {
 	Debug("Destroying Device");
 	Py_XDECREF(r->node);
-	r->ob_type->tp_free((PyObject*)r);
+	//r->ob_type->tp_free((PyObject*)r);
+	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
 }
 
 /*---------------------------------------------------------------------------*/
@@ -498,7 +505,7 @@ static int deviceInit(device_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject deviceType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.Device",
 	.tp_basicsize = sizeof(device_),
 	.tp_dealloc = (destructor)deviceDestroy,
@@ -617,7 +624,7 @@ static int vicurveInit(vicurve_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject vicurveType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.VICurve",
 	.tp_basicsize = sizeof(vicurve_),
 	.tp_dealloc = (destructor)vicurveDestroy,
@@ -687,7 +694,7 @@ static int tlineInit(tline_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject tlineType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.TLine",
 	.tp_basicsize = sizeof(tline_),
 	.tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE,
@@ -797,7 +804,7 @@ static int tlineWInit(tlineW_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject tlineWType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.TLineW",
 	.tp_basicsize = sizeof(tlineW_),
 	.tp_dealloc = (destructor)tlineWDestroy,
@@ -1002,7 +1009,7 @@ static int vSourceInit(source_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject iSourceType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.source",
 	.tp_basicsize = sizeof(source_),
 	.tp_dealloc = (destructor)sourceDestroy,
@@ -1018,7 +1025,7 @@ static PyTypeObject iSourceType = {
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject vSourceType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.Source",
 	.tp_basicsize = sizeof(source_),
 	.tp_dealloc = (destructor)sourceDestroy,
@@ -1091,7 +1098,7 @@ static int nlSourceInit(nlSource_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject nlSourceType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.NLSource",
 	.tp_basicsize = sizeof(nlSource_),
 	.tp_dealloc = (destructor)nlSourceDestroy,
@@ -1196,7 +1203,7 @@ static int cbSourceInit(cbSource_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject cbSourceType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.CBSource",
 	.tp_basicsize = sizeof(cbSource_),
 	.tp_dealloc = (destructor)cbSourceDestroy,
@@ -1292,7 +1299,7 @@ static int inductorInit(inductor_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject inductorType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.Inductor",
 	.tp_basicsize = sizeof(inductor_),
 	.tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE,
@@ -1349,7 +1356,7 @@ static int capacitorInit(capacitor_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject capacitorType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.Capacitor",
 	.tp_basicsize = sizeof(capacitor_),
 	.tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE,
@@ -1407,7 +1414,7 @@ static int resistorInit(resistor_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 
 static PyTypeObject resistorType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.Resistor",
 	.tp_basicsize = sizeof(resistor_),
 	.tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE,
@@ -1454,7 +1461,8 @@ static void circuitDestroy(circuit_ *r)
 	if(simulatorDestroy(&r->simulator)) {
 		Warn("Failed to destroy simulator");
 	}
-	r->ob_type->tp_free((PyObject*)r);
+	//r->ob_type->tp_free((PyObject*)r);
+	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
 }
 
 /*---------------------------------------------------------------------------*/
@@ -1647,7 +1655,7 @@ static int circuitInit(circuit_ *r, PyObject *args, PyObject *kwds)
 /*---------------------------------------------------------------------------*/
 	
 static PyTypeObject circuitType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL,0)
 	.tp_name = "simulator.CircuitBase",
 	.tp_basicsize = sizeof(circuit_),
 	.tp_dealloc = (destructor)circuitDestroy,
@@ -1758,9 +1766,20 @@ PyMODINIT_FUNC initsimulator_(void)
 	import_array();
 	
 	/* Create the module and add the functions */
-	m = Py_InitModule3("simulator_", simulatorMethods, simulatorDoc);
-	if (m == NULL)
-		return;
+	static struct PyModuleDef moduledef = {
+		PyModuleDef_HEAD_INIT,
+		"simulator_",     /* m_name */
+		simulatorDoc,  /* m_doc */
+		-1,                  /* m_size */
+		simulatorMethods,    /* m_methods */
+		NULL,                /* m_reload */
+		NULL,                /* m_traverse */
+		NULL,                /* m_clear */
+		NULL,                /* m_free */
+	};
+	m = PyModule_Create(&moduledef);
+	//m = Py_InitModule3("simulator_", simulatorMethods, simulatorDoc); // Python2 way
+	if (m == NULL)	return;
 	
 	Py_INCREF(&circuitType);
     PyModule_AddObject(m, "Circuit_", (PyObject *)&circuitType);

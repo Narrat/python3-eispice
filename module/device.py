@@ -374,7 +374,7 @@ class PyB(simulator_.CallBack_):
 			for i in self.range:
 				derivs[i] = result[self.args[i]]
 
-		return float(result)
+		return(float(result))
 
 	def model(self, *args):
 		"""This should be redefined when this class is inherited."""
@@ -383,11 +383,11 @@ class PyB(simulator_.CallBack_):
 
 	def v(self, node):
 		"""Returns the name of a node used within the simulator."""
-		return 'v(%s)' % str(node)
+		return('v(%s)' % str(node))
 
 	def i(self, source):
 		"""Returns the name of a current probe within the simulator."""
-		return 'i(%s)' % str(source)
+		return('i(%s)' % str(source))
 
 #-----------------------------------------------------------------------------#
 #                                 Sources                                     #
@@ -679,8 +679,7 @@ class W(simulator_.TLineW_):
 			oNodes = (oNodes, )
 
 		if len(iNodes) != len(oNodes):
-			raise (RuntimeError,
-				"Must have the same number of input and output nodes.")
+			raise RuntimeError("Must have the same number of input and output nodes.")
 
 		nodes = len(iNodes)
 
@@ -701,23 +700,17 @@ class W(simulator_.TLineW_):
 			Rs =  array(units.floatList2D(Rs))
 			Gd =  array(units.floatList2D(Gd))
 			if (R0.shape[0] != nodes) or (R0.shape[1] != nodes):
-				raise (RuntimeError,
-					"R0 must be a square matrix with as many rows as nodes.")
+				raise RuntimeError("R0 must be a square matrix with as many rows as nodes.")
 			if (L0.shape[0] != nodes) or (L0.shape[1] != nodes):
-				raise (RuntimeError,
-					"L0 must be a square matrix with as many rows as nodes.")
+				raise RuntimeError("L0 must be a square matrix with as many rows as nodes.")
 			if (C0.shape[0] != nodes) or (C0.shape[1] != nodes):
-				raise (RuntimeError,
-					"C0 must be a square matrix with as many rows as nodes.")
+				raise RuntimeError("C0 must be a square matrix with as many rows as nodes.")
 			if (G0.shape[0] != nodes) or (G0.shape[1] != nodes):
-				raise (RuntimeError,
-					"G0 must be a square matrix with as many rows as nodes.")
+				raise RuntimeError("G0 must be a square matrix with as many rows as nodes.")
 			if (Rs.shape[0] != nodes) or (Rs.shape[1] != nodes):
-				raise (RuntimeError,
-					"Rs must be a square matrix with as many rows as nodes.")
+				raise RuntimeError("Rs must be a square matrix with as many rows as nodes.")
 			if (Gd.shape[0] != nodes) or (Gd.shape[1] != nodes):
-				raise (RuntimeError,
-					"Gd must be a square matrix with as many rows as nodes.")
+				raise RuntimeError("Gd must be a square matrix with as many rows as nodes.")
 		else:
 			if G0 is None:
 				G0 = 0.0
@@ -735,7 +728,7 @@ class W(simulator_.TLineW_):
 		nodeNames = tuple([str(i) for i in iNodes] + [str(iRef)]
 			 + [str(i) for i in oNodes] + [str(oRef)])
 
-		print G0
+		print(G0)
 
 		simulator_.TLineW_.__init__(self, nodeNames, int(M),
 				units.float(length), L0, C0, R0, G0, Rs, Gd, units.float(fgd),

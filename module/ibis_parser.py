@@ -94,7 +94,7 @@ class _Builder:
 					return handler(**match.groupdict())
 				else:
 					return handler
-		raise RuntimeError, line
+		raise RuntimeError(line)
 
 	def process(self):
 		for line in iter(self.fdin.readline, ''):
@@ -163,10 +163,10 @@ class _Builder:
 
 	def handleCommentChar(self, key, name):
 		if name != '':
-			raise RuntimeError, "Don't support comment characters other than |. "
+			raise RuntimeError("Don't support comment characters other than |. ")
 
 	def handleUnkown(self, line):
-		raise RuntimeError, 'Unsupported Line\n%s' % line
+		raise RuntimeError('Unsupported Line\n%s' % line)
 
 # -------------------------------------------------------------------------- #
 
@@ -573,5 +573,5 @@ class Ibis_Parser(_Builder):
 			if device in self.component:
 				self.device = device
 			else:
-				raise RuntimeError, "Can not find %s in the IBIS File" % device
+				raise RuntimeError("Can not find %s in the IBIS File" % device)
 

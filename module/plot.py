@@ -373,7 +373,7 @@ def plot(*lst):
 	for circuit in lst:
 		
 		if circuit.results == None:
-			raise RuntimeError, "Circuit %s has no results." % circuit.title
+			raise RuntimeError("Circuit %s has no results." % circuit.title)
 			
 		try:
 			vPlot.title += " ," + circuit.title 

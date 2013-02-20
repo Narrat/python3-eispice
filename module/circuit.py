@@ -251,10 +251,10 @@ class Circuit(Circuit_):
 		"""
 
 		if (simValue < value*(1.0 - sign(value)*1e-4)):
-			print "%s FAIL: %.9e != %.9e" % (name, value, simValue)
+			print("%s FAIL: %.9e != %.9e" % (name, value, simValue))
 			return False
 		if (simValue > value*(1.0 + sign(value)*1e-4)):
-			print "%s FAIL: %.9e != %.9e" % (name, value, simValue)
+			print("%s FAIL: %.9e != %.9e" % (name, value, simValue))
 			return False
 		
 		return True
