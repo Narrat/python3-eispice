@@ -60,8 +60,7 @@ static PyMemberDef pwMembers[] = {
 static void pwDestroy(pw_ *r)
 {
 	Py_XDECREF(r->pw);
-	//r->ob_type->tp_free((PyObject*)r);
-	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
+	Py_TYPE (r)->tp_free (r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -158,8 +157,7 @@ static PyMemberDef sffmMembers[] = {
 
 static void sffmDestroy(sffm_ *r)
 {
-	//r->ob_type->tp_free((PyObject*)r);
-	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
+	Py_TYPE (r)->tp_free (r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -222,8 +220,7 @@ static PyMemberDef expMembers[] = {
 
 static void expDestroy(exp_ *r)
 {
-	//r->ob_type->tp_free((PyObject*)r);
-	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
+	Py_TYPE (r)->tp_free (r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -289,8 +286,7 @@ static PyMemberDef pulseMembers[] = {
 
 static void pulseDestroy(pulse_ *r)
 {
-	//r->ob_type->tp_free((PyObject*)r);
-	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
+	Py_TYPE (r)->tp_free (r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -357,8 +353,7 @@ static PyMemberDef gaussMembers[] = {
 
 static void gaussDestroy(gauss_ *r)
 {
-	//r->ob_type->tp_free((PyObject*)r);
-	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
+	Py_TYPE (r)->tp_free (r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -421,8 +416,7 @@ static PyMemberDef sinMembers[] = {
 
 static void sinDestroy(sin_ *r)
 {
-	//r->ob_type->tp_free((PyObject*)r);
-	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
+	Py_TYPE (r)->tp_free (r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -485,8 +479,7 @@ static void deviceDestroy(device_ *r)
 {
 	Debug("Destroying Device");
 	Py_XDECREF(r->node);
-	//r->ob_type->tp_free((PyObject*)r);
-	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
+	Py_TYPE (r)->tp_free (r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -1461,8 +1454,7 @@ static void circuitDestroy(circuit_ *r)
 	if(simulatorDestroy(&r->simulator)) {
 		Warn("Failed to destroy simulator");
 	}
-	//r->ob_type->tp_free((PyObject*)r);
-	PyObject_GC_Del(r); // Needs further investigation (r->ob_type should be replaced by Py_TYPE(r))
+	Py_TYPE (r)->tp_free (r);
 }
 
 /*---------------------------------------------------------------------------*/
