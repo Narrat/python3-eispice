@@ -33,8 +33,7 @@ plot_voltage -- Plot voltages at specific nodes
 plot_current -- Plot currents through specific devices
 """
 
-import Tkinter as tk
-import tkFont
+import tkinter as tk
 import numpy
 
 from datetime import datetime

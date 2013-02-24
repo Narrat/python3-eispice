@@ -60,7 +60,7 @@ static PyMemberDef pwMembers[] = {
 static void pwDestroy(pw_ *r)
 {
 	Py_XDECREF(r->pw);
-	Py_TYPE (r)->tp_free (r);
+	Py_TYPE(r)->tp_free(r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -157,7 +157,7 @@ static PyMemberDef sffmMembers[] = {
 
 static void sffmDestroy(sffm_ *r)
 {
-	Py_TYPE (r)->tp_free (r);
+	Py_TYPE(r)->tp_free(r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -220,7 +220,7 @@ static PyMemberDef expMembers[] = {
 
 static void expDestroy(exp_ *r)
 {
-	Py_TYPE (r)->tp_free (r);
+	Py_TYPE(r)->tp_free(r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -286,7 +286,7 @@ static PyMemberDef pulseMembers[] = {
 
 static void pulseDestroy(pulse_ *r)
 {
-	Py_TYPE (r)->tp_free (r);
+	Py_TYPE(r)->tp_free(r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -353,7 +353,7 @@ static PyMemberDef gaussMembers[] = {
 
 static void gaussDestroy(gauss_ *r)
 {
-	Py_TYPE (r)->tp_free (r);
+	Py_TYPE(r)->tp_free(r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -416,7 +416,7 @@ static PyMemberDef sinMembers[] = {
 
 static void sinDestroy(sin_ *r)
 {
-	Py_TYPE (r)->tp_free (r);
+	Py_TYPE(r)->tp_free(r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -479,7 +479,7 @@ static void deviceDestroy(device_ *r)
 {
 	Debug("Destroying Device");
 	Py_XDECREF(r->node);
-	Py_TYPE (r)->tp_free (r);
+	Py_TYPE(r)->tp_free(r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -950,7 +950,7 @@ static int sourceSetStimulus(source_ *r, PyObject *stimulus)
 static int sourceSetAttr(source_ *r, PyObject *name, PyObject *stimulus)
 {
 	if(!strcmp(PyBytes_AsString(name), "wave")) {
-		ReturnErrIf(stimulus->ob_type != r->stimulus->ob_type, 
+		ReturnErrIf(Py_TYPE(stimulus) != Py_TYPE(r->stimulus), 
 				"Can't change stimulus type");
 		ReturnErrIf(sourceSetStimulus(r, stimulus));
 	} else {
@@ -1454,7 +1454,7 @@ static void circuitDestroy(circuit_ *r)
 	if(simulatorDestroy(&r->simulator)) {
 		Warn("Failed to destroy simulator");
 	}
-	Py_TYPE (r)->tp_free (r);
+	Py_TYPE(r)->tp_free(r);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -1707,7 +1707,7 @@ static PyObject * about(PyObject *self, PyObject *args)
 }
 
 /*===========================================================================
- |                                  esipice                                  |
+ |                                  eispice                                  |
   ===========================================================================*/
 
 static PyMethodDef simulatorMethods[] = {
@@ -1730,49 +1730,50 @@ void simulatorCleanup(void)
 
 PyDoc_STRVAR(simulatorDoc, "Circuit Simulator");
 
-PyMODINIT_FUNC initsimulator_(void)
+/* Create the module and add the functions */
+static struct PyModuleDef moduledef = {
+	PyModuleDef_HEAD_INIT,
+	"simulator_",     /* m_name */
+	simulatorDoc,  /* m_doc */
+	-1,                  /* m_size */
+	simulatorMethods,    /* m_methods */
+	NULL,                /* m_reload */
+	NULL,                /* m_traverse */
+	NULL,                /* m_clear */
+	NULL,                /* m_free */
+};
+
+static PyObject * moduleinit(void)
 {
 	PyObject *m;
 	
-	if (PyType_Ready(&circuitType) < 0)		return;
-	if (PyType_Ready(&inductorType) < 0)	return;
-	if (PyType_Ready(&capacitorType) < 0)	return;
-	if (PyType_Ready(&resistorType) < 0)	return;
-	if (PyType_Ready(&nlSourceType) < 0)	return;
-	if (PyType_Ready(&cbSourceType) < 0)	return;
-	if (PyType_Ready(&iSourceType) < 0)		return;
-	if (PyType_Ready(&vSourceType) < 0)		return;
-	if (PyType_Ready(&sinType) < 0)			return;
-	if (PyType_Ready(&gaussType) < 0)		return;
-	if (PyType_Ready(&pulseType) < 0)		return;
-	if (PyType_Ready(&expType) < 0)			return;
-	if (PyType_Ready(&sffmType) < 0)		return;
-	if (PyType_Ready(&pwlType) < 0)			return;
-	if (PyType_Ready(&pwcType) < 0)			return;
-	if (PyType_Ready(&tlineType) < 0)		return;
-	if (PyType_Ready(&tlineWType) < 0)		return;
-	if (PyType_Ready(&vicurveType) < 0)		return;
-	if (PyType_Ready(&deviceType) < 0)		return;
+	m = PyModule_Create(&moduledef);
 	
+	if (m == NULL)	return NULL;
+	
+	if (PyType_Ready(&circuitType) < 0)	return NULL;
+	if (PyType_Ready(&inductorType) < 0)	return NULL;
+	if (PyType_Ready(&capacitorType) < 0)	return NULL;
+	if (PyType_Ready(&resistorType) < 0)	return NULL;
+	if (PyType_Ready(&nlSourceType) < 0)	return NULL;
+	if (PyType_Ready(&cbSourceType) < 0)	return NULL;
+	if (PyType_Ready(&iSourceType) < 0)	return NULL;
+	if (PyType_Ready(&vSourceType) < 0)	return NULL;
+	if (PyType_Ready(&sinType) < 0)		return NULL;
+	if (PyType_Ready(&gaussType) < 0)	return NULL;
+	if (PyType_Ready(&pulseType) < 0)	return NULL;
+	if (PyType_Ready(&expType) < 0)		return NULL;
+	if (PyType_Ready(&sffmType) < 0)	return NULL;
+	if (PyType_Ready(&pwlType) < 0)		return NULL;
+	if (PyType_Ready(&pwcType) < 0)		return NULL;
+	if (PyType_Ready(&tlineType) < 0)	return NULL;
+	if (PyType_Ready(&tlineWType) < 0)	return NULL;
+	if (PyType_Ready(&vicurveType) < 0)	return NULL;
+	if (PyType_Ready(&deviceType) < 0)	return NULL;
+
 	/* Import the array object */
 	import_array();
-	
-	/* Create the module and add the functions */
-	static struct PyModuleDef moduledef = {
-		PyModuleDef_HEAD_INIT,
-		"simulator_",     /* m_name */
-		simulatorDoc,  /* m_doc */
-		-1,                  /* m_size */
-		simulatorMethods,    /* m_methods */
-		NULL,                /* m_reload */
-		NULL,                /* m_traverse */
-		NULL,                /* m_clear */
-		NULL,                /* m_free */
-	};
-	m = PyModule_Create(&moduledef);
-	//m = Py_InitModule3("simulator_", simulatorMethods, simulatorDoc); // Python2 way
-	if (m == NULL)	return;
-	
+
 	Py_INCREF(&circuitType);
     PyModule_AddObject(m, "Circuit_", (PyObject *)&circuitType);
 	PyModule_AddObject(m, "Inductor_", (PyObject *)&inductorType);
@@ -1797,7 +1798,13 @@ PyMODINIT_FUNC initsimulator_(void)
 	PyModule_AddObject(m, "Device_", (PyObject *)&deviceType);
 	
 	Py_AtExit(simulatorCleanup);
+	
+	return m;
+}
 
+PyMODINIT_FUNC PyInit_simulator_(void)
+{
+	return moduleinit();
 }
 
 /*===========================================================================*/

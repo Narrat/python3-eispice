@@ -20,13 +20,11 @@
 
 """
 This module provides a class that can be used as a base class to 
-create esipice sub-circuits.
+create eispice sub-circuits.
 
 Classes:
-Subckt -- Base calss used to define a sub-circuit.
+Subckt -- Base calls used to define a sub-circuit.
 """
-
-import mutex
 
 _subcktCnt = 0
 
