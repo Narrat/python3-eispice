@@ -80,10 +80,9 @@ uninstall:
 	$(Q)python3 uninstall.py
 	
 
-install: uninstall
+install:
 	@echo Installing
-	$(Q)python3 setup.py build $(PYFLAG) install
-	$(Q)rm -fdr ./build
+	$(Q)python3 setup.py install --root=${DESTDIR}
 
 windist: $(LIBS)
 	@echo Installing
