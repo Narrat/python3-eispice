@@ -537,8 +537,8 @@ class Ibis_Parser(_Builder):
 		_Builder.__init__(self)
 		if filename == 'test':
 			import ibis_test
-			import StringIO
-			self.fdin = StringIO.StringIO(ibis_test.ibis_test)
+			import io
+			self.fdin = io.StringIO(ibis_test.ibis_test)
 		else:
 			filename = os.path.join(sys.path[0], filename)
 			self.fdin = open(filename, 'rb')
