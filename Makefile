@@ -34,7 +34,7 @@ all: Makefile $(EISPICE)
 $(EISPICE):
 	@echo Building Module
 	$(Q)python3 setup.py build $(PYFLAG)
-	$(Q)cp build/*/simulator_.so module/
+	$(Q)cp build/*/sim*.so module/
 	$(Q)rm -fdr build
 
 libs:
@@ -72,8 +72,8 @@ clean:
 	@echo Cleaning...
 	$(Q)rm -vf *~ */*~ */*/*~
 	$(Q)rm -vf ./module/*.o
-	$(Q)rm -vf ./module/simulator_.dll
-	$(Q)rm -vf ./module/simulator_.so
+	$(Q)rm -vf ./module/sim*.dll
+	$(Q)rm -vf ./module/sim*.so
 
 uninstall:
 	@echo Un-Installing

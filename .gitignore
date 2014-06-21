@@ -17,4 +17,4 @@ libs/simulator/*.a
 libs/simulator/math/*.o
 libs/superlu/SRC/*.o
 libs/superlu/*.a
-module/simulator_.so
+module/sim*.so
