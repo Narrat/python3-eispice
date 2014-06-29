@@ -546,7 +546,7 @@ static PyMemberDef vicurveMembers[] = {
 
 static int vicurveSetAttr(vicurve_ *r, PyObject *name, PyObject *stimulus)
 {
-	if(!strcmp(PyBytes_AsString(name), "VI")) {
+	if(!strcmp(PyUnicode_AsUTF8(name), "VI")) {
 		ReturnErrIf(!(PyObject_TypeCheck(stimulus, &pwlType)
 				|| PyObject_TypeCheck(stimulus, &pwcType)), 
 				"Must be a PW object");
@@ -556,7 +556,7 @@ static int vicurveSetAttr(vicurve_ *r, PyObject *name, PyObject *stimulus)
 		r->vi = (pw_*)stimulus;
 		r->viData = (double *)&((pw_*)stimulus)->pw->data;
 		r->viLength = ((pw_*)stimulus)->pw->dimensions[0];
-	} else if(!strcmp(PyBytes_AsString(name), "TA")) {
+	} else if(!strcmp(PyUnicode_AsUTF8(name), "TA")) {
 		ReturnErrIf(r->ta == NULL, "Can't add a multiplier to a pre-existing "
 			"VI-Curve with no multiplier.");
 		ReturnErrIf(!(PyObject_TypeCheck(stimulus, &pwlType)
@@ -635,9 +635,9 @@ static PyTypeObject vicurveType = {
 static int vicurveAdd(vicurve_ *r, simulator_ *simulator, PyObject *name)
 {
 	ReturnErrIf(simulatorAddVICurve(simulator, 
-			PyBytes_AsString(name), 
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 0)),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 1)),
+			PyUnicode_AsUTF8(name), 
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 0)),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 1)),
 			&r->viData, &r->viLength, r->viType, &r->taData, &r->taLength,
 			r->taType));
 	return 0;
@@ -703,11 +703,11 @@ static PyTypeObject tlineType = {
 static int tlineAdd(tline_ *r, simulator_ *simulator, PyObject *name)
 {
 	ReturnErrIf(simulatorAddTLine(simulator, 
-			PyBytes_AsString(name),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 0)),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 1)),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 2)),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 3)),
+			PyUnicode_AsUTF8(name),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 0)),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 1)),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 2)),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 3)),
 			&r->Z0, &r->Td, &r->loss));
 	return 0;
 }
@@ -820,11 +820,11 @@ static int tlineWAdd(tlineW_ *r, simulator_ *simulator, PyObject *name)
 	numNodes = PyTuple_Size(((device_*)r)->node);
 	nodes = malloc(sizeof(char *)*numNodes);
 	for(i = 0; i < numNodes; i++) {
-		nodes[i] = PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, i));
+		nodes[i] = PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, i));
 	}
 	
 	ReturnErrIf(simulatorAddTLineW(simulator,
-			PyBytes_AsString(name),
+			PyUnicode_AsUTF8(name),
 			nodes, numNodes,
 			&r->M,
 			&r->len,
@@ -949,7 +949,7 @@ static int sourceSetStimulus(source_ *r, PyObject *stimulus)
 
 static int sourceSetAttr(source_ *r, PyObject *name, PyObject *stimulus)
 {
-	if(!strcmp(PyBytes_AsString(name), "wave")) {
+	if(!strcmp(PyUnicode_AsUTF8(name), "wave")) {
 		ReturnErrIf(Py_TYPE(stimulus) != Py_TYPE(r->stimulus), 
 				"Can't change stimulus type");
 		ReturnErrIf(sourceSetStimulus(r, stimulus));
@@ -1036,9 +1036,9 @@ static PyTypeObject vSourceType = {
 static int sourceAdd(source_ *r, simulator_ *simulator, PyObject *name)
 {
 	ReturnErrIf(simulatorAddSource(simulator, 
-			PyBytes_AsString(name),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 0)),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 1)),
+			PyUnicode_AsUTF8(name),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 0)),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 1)),
 			r->type, &r->dc,r->stimulusType, r->args));
 	return 0;
 }
@@ -1077,7 +1077,7 @@ static int nlSourceInit(nlSource_ *r, PyObject *args, PyObject *kwds)
 	char *type;
 	static char *kwlist[] = {"pNode", "nNode", "type", "equation", NULL};
 	
-	ReturnErrIf(!PyArg_ParseTupleAndKeywords(args, kwds, "OOsS:B", kwlist, 
+	ReturnErrIf(!PyArg_ParseTupleAndKeywords(args, kwds, "OOuU:B", kwlist, 
 			&pNode, &nNode, &type, &r->equation));
 	
 	DeviceInit(r->device, Py_BuildValue("OO", pNode, nNode));
@@ -1108,11 +1108,11 @@ static PyTypeObject nlSourceType = {
 static int nlSourceAdd(nlSource_ *r, simulator_ *simulator, PyObject *name)
 {
 	ReturnErrIf(simulatorAddNonlinearSource(simulator, 
-			PyBytes_AsString(name),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 0)),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 1)),
+			PyUnicode_AsUTF8(name),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 0)),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 1)),
 			r->type,
-			PyBytes_AsString(r->equation)));
+			PyUnicode_AsUTF8(r->equation)));
 	return 0;
 }
 
@@ -1164,7 +1164,7 @@ static int cbSourceInit(cbSource_ *r, PyObject *args, PyObject *kwds)
 	static char *kwlist[] = {"pNode", "nNode", "type", "variables",
 			"callback", NULL};
 	
-	ReturnErrIf(!PyArg_ParseTupleAndKeywords(args, kwds, "OOsOO:CB", kwlist, 
+	ReturnErrIf(!PyArg_ParseTupleAndKeywords(args, kwds, "OOuOO:CB", kwlist, 
 			&pNode, &nNode, &type, &r->variables, &r->callback));
 	
 	DeviceInit(r->device, Py_BuildValue("OO", pNode, nNode));
@@ -1242,13 +1242,13 @@ static int cbSourceAdd(cbSource_ *r, simulator_ *simulator, PyObject *name)
 	ReturnErrIf(vars == NULL);
 	
 	for(i = 0; i < numVars; i++) {
-		vars[i] = PyBytes_AsString(PyTuple_GetItem(r->variables, i));
+		vars[i] = PyUnicode_AsUTF8(PyTuple_GetItem(r->variables, i));
 	}
 	
 	ReturnErrIf(simulatorAddCallbackSource(simulator, 
-				PyBytes_AsString(name),
-				PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 0)),
-				PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 1)),
+				PyUnicode_AsUTF8(name),
+				PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 0)),
+				PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 1)),
 				r->type, vars, (double*)r->values->data, 
 				(double*)r->derivs->data, numVars, cbSourceCallback,
 				(void*)r));
@@ -1308,9 +1308,9 @@ static PyTypeObject inductorType = {
 static int inductorAdd(inductor_ *r, simulator_ *simulator, PyObject *name)
 {
 	ReturnErrIf(simulatorAddInductor(simulator,
-			PyBytes_AsString(name),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 0)),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 1)),
+			PyUnicode_AsUTF8(name),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 0)),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 1)),
 			&r->L));
 	return 0;
 }
@@ -1365,9 +1365,9 @@ static PyTypeObject capacitorType = {
 static int capacitorAdd(capacitor_ *r, simulator_ *simulator, PyObject *name)
 {
 	ReturnErrIf(simulatorAddCapacitor(simulator,
-			PyBytes_AsString(name),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 0)),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 1)),
+			PyUnicode_AsUTF8(name),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 0)),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 1)),
 			&r->C));
 	return 0;
 }
@@ -1423,9 +1423,9 @@ static PyTypeObject resistorType = {
 static int resistorAdd(resistor_ *r, simulator_ *simulator, PyObject *name)
 {
 	ReturnErrIf(simulatorAddResistor(simulator, 
-			PyBytes_AsString(name),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 0)),
-			PyBytes_AsString(PyTuple_GetItem(((device_*)r)->node, 1)),
+			PyUnicode_AsUTF8(name),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 0)),
+			PyUnicode_AsUTF8(PyTuple_GetItem(((device_*)r)->node, 1)),
 			&r->R));
 	return 0;
 }
@@ -1482,7 +1482,7 @@ static int circuitBuildNames(circuit_ *r, char **vars, int dims[2])
 	r->variables = PyList_New(dims[1]);
 	for(i = 0; i < dims[1]; i++) {
 		ReturnErrIf(PyList_SetItem(r->variables, i, 
-				PyBytes_FromString(vars[i])));
+				PyUnicode_FromString(vars[i])));
 	}
 	free(vars);
 	return 0;
@@ -1581,7 +1581,7 @@ static int circuitSetAttr(circuit_ *r, PyObject *name, PyObject *device)
 	ReturnErrIf(device == NULL, "Device removal not supported.");
 	
 	ReturnErrIf(PyDict_GetItem(r->devices, name) != NULL, 
-			"Device %s already exists.", PyBytes_AsString(name));
+			"Device %s already exists.", PyUnicode_AsUTF8(name));
 	
 	if(PyObject_TypeCheck(device, &inductorType)) {
 		/* Inductor */
@@ -1627,7 +1627,7 @@ static int circuitInit(circuit_ *r, PyObject *args, PyObject *kwds)
 	static char *kwlist[] = {"title", NULL};
 	
 	r->title = NULL;
-	ReturnErrIf(!PyArg_ParseTupleAndKeywords(args, kwds, "|S:circuit", kwlist, 
+	ReturnErrIf(!PyArg_ParseTupleAndKeywords(args, kwds, "|U:circuit", kwlist, 
 			&r->title));
 	Py_XINCREF(r->title);
 	
