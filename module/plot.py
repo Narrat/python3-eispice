@@ -34,6 +34,7 @@ plot_current -- Plot currents through specific devices
 """
 
 import tkinter as tk
+import tkinter.font as tkfont
 import numpy
 
 from datetime import datetime
@@ -183,8 +184,8 @@ class Plot(tk.Canvas):
 		self.marker = [(0,0),(0,0)]
 		self.markerColour = ['red', 'blue']
 		
-		self.titleFont = tkFont.Font(family='Helvetica', size=12, weight='bold')
-		self.axisFont = tkFont.Font(family='Helvetica', size=9)		
+		self.titleFont = tkfont.Font(family='Helvetica', size=12, weight='bold')
+		self.axisFont = tkfont.Font(family='Helvetica', size=9)
 		
 		
 	def _drawLabels(self):
