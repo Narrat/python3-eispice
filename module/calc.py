@@ -130,7 +130,7 @@ class Variable:
 	
 	def __iter__(self):
 		"""Returns an iterator of derivative keys."""
-		return self.deriv.iterkeys()
+		return iter(self.deriv.keys())
 	
 	def __add__(self, other):
 		return _Result(lambda x, y: x + y, lambda x, y, dx, dy: dx + dy,
@@ -186,7 +186,7 @@ class Variable:
 	
 	def __long__(self):
 		"""Returns an long which represents the value of the variable."""
-		return long(self.value)
+		return int(self.value)
 	
 	def __float__(self):
 		"""Returns an float which represents the value of the variable."""
@@ -277,23 +277,23 @@ class _Result(Variable):
 		if y is None:
 			self.value = f(float(x))
 			if hasattr(x, 'deriv'):
-				for (key, value) in x.deriv.iteritems():
+				for (key, value) in x.deriv.items():
 					self.deriv[key] = d(x.value, value)		
 		
 		else:
 			self.value = f(float(x), float(y))
 			if hasattr(x, 'deriv') and hasattr(y, 'deriv'):
-				for (key, value) in x.deriv.iteritems():
+				for (key, value) in x.deriv.items():
 					self.deriv[key] = d(x.value, y.value,
 							value, y.deriv.get(key, 0.0))
-				for (key, value) in y.deriv.iteritems():
+				for (key, value) in y.deriv.items():
 					self.deriv[key] = d(x.value, y.value, 
 							x.deriv.get(key, 0.0), value)
 			elif hasattr(x, 'deriv'):
-				for (key, value) in x.deriv.iteritems():
+				for (key, value) in x.deriv.items():
 					self.deriv[key] = d(x.value, float(y), value, 0.0)
 			elif hasattr(y, 'deriv'):
-				for (key, value) in y.deriv.iteritems():
+				for (key, value) in y.deriv.items():
 					self.deriv[key] = d(float(x), y.value, 0.0, value)
 
 # --------------------------------------------------------------------------- #
