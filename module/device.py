@@ -357,7 +357,7 @@ class PyB(simulator_.CallBack_):
 		for varaiable in variables:
 			self.args.append(calc.Variable())
 
-		self.range = range(len(variables))
+		self.range = list(range(len(variables)))
 
 	def callBack(self, data, derivs):
 		"""Wrapper around the low-level PyB call-back."""
