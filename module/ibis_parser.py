@@ -38,6 +38,7 @@ Ibis -- Top Level IBIS Data
 
 import re, os, sys
 import units
+import collections
 from numpy import array
 
 from ibis_driver import *
@@ -90,7 +91,7 @@ class _Builder:
 		for pattern, handler in self.patterns:
 			match = pattern.match(line.lower())
 			if match:
-				if callable(handler):
+				if isinstance(handler, collections.Callable):
 					return handler(**match.groupdict())
 				else:
 					return handler
@@ -568,7 +569,7 @@ class Ibis_Parser(_Builder):
 
 		# Set the default component (called device)
 		if device == None:
-			self.device = self.component.keys()[0]
+			self.device = list(self.component.keys())[0]
 		else:
 			if device in self.component:
 				self.device = device
