@@ -79,11 +79,11 @@ class Variable:
 	>>> z = x**x + cos(20*y + x) - (x / (y+50)) # z is of type _Result
 	
 	Results:
-	>>> print round(z,6) # z's value
+	>>> print(round(z,6)) # z's value
 	-21.826493
-	>>> print round(z[x],6) # dz/dx
+	>>> print(round(z[x],6)) # dz/dx
 	20.761769
-	>>> print round(z[y],6) # dz/dx
+	>>> print(round(z[y],6)) # dz/dx
 	14.283614
 	
 	Change the value of x:
@@ -93,16 +93,16 @@ class Variable:
 	>>> z = x**x + cos(20*y + x) - (x / (y+50))
 
 	Results:
-	>>> print round(z,6) # z's value
+	>>> print(round(z,6)) # z's value
 	9999999995.33
-	>>> print round(z[x],6) # dz/dx
+	>>> print(round(z[x],6)) # dz/dx
 	33025850929.7
-	>>> print round(z[y],6) # dz/dx
+	>>> print(round(z[y],6)) # dz/dx
 	-15.577814
 	"""
 	
 	def __init__(self, value=0.0):
-		"""Creates the varaible and sets its value."""
+		"""Creates the variable and sets its value."""
 		self.value = float(value)
 		self.deriv = {}
 		self.deriv[hash(id(self))] = 1.0
@@ -261,7 +261,7 @@ class Variable:
 				lambda x, dx: _divide(1.0, 2.0*math.sqrt(x)) * dx)		
 
 class _Result(Variable):
-	"""The reslult of an equation containing Variables."""
+	"""The result of an equation containing Variables."""
 	
 	def __init__(self, f, d, x, y=None):
 		"""
