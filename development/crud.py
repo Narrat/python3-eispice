@@ -10,4 +10,3 @@ print(Cj)
 
 Cj = CJO/(1-Vd/VJ)**M
 print(Cj)
-

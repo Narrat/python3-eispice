@@ -26,7 +26,7 @@
 |
 |   [Copyright]    copyright (c)2006 Analog Devices, All rights reserved.
 |
-|		Rev. 1.0	4/3/2006	Dale Kaul	Original Release	
+|		Rev. 1.0	4/3/2006	Dale Kaul	Original Release
 |		Rev. 2.0	6/18/2007	Rob Reeder
 |		Changed referrence of the FCO and DCO pins to OUTPUT1 instead of CLK.
 |
@@ -39,8 +39,8 @@
 [Package]
 | variable   typ   min   max
 R_pkg  0.010ohms 0.009ohms 0.011ohms
-L_pkg  1.2nH  NA  NA 
-C_pkg  .3000pF NA  NA 
+L_pkg  1.2nH  NA  NA
+C_pkg  .3000pF NA  NA
 
 |
 [Pin] signal_name  model_name  R_pin L_pin C_pin
@@ -70,25 +70,25 @@ C_pkg  .3000pF NA  NA
 24     DCO+        OUTPUT1     NA NA NA
 25     FCO-        OUTPUT1     NA NA NA
 26     FCO+        OUTPUT1     NA NA NA
-27     D-D         OUTPUT1     NA NA NA    
+27     D-D         OUTPUT1     NA NA NA
 28     D+D         OUTPUT1     NA NA NA
 29     D-C         OUTPUT1     NA NA NA
 30     D+C         OUTPUT1     NA NA NA
 31     D-B         OUTPUT1     NA NA NA
 32     D+B         OUTPUT1     NA NA NA
 33     D-A         OUTPUT1     NA NA NA
-34     D+A         OUTPUT1     NA NA NA 
+34     D+A         OUTPUT1     NA NA NA
 35     DRVDD       POWER       NA NA NA
-36     DRGND       GND         NA NA NA 
+36     DRGND       GND         NA NA NA
 37     AVDD        POWER       NA NA NA
-38     SCLK/DTP    INPUT1      NA NA NA 
+38     SCLK/DTP    INPUT1      NA NA NA
 39     DIO/ODM     IO          NA NA NA
 40     CSB         INPUT1      NA NA NA
 41     PDWN        INPUT2      NA NA NA
 42     AVDD        POWER       NA NA NA
 43     VIN+A       NC          NA NA NA
-44     VIN-A       NC          NA NA NA 
-45     AVDD        POWER       NA NA NA 
+44     VIN-A       NC          NA NA NA
+45     AVDD        POWER       NA NA NA
 46     VIN-B       NC          NA NA NA
 47     VIN+B       NC          NA NA NA
 48     AVDD        POWER       NA NA NA
@@ -107,7 +107,7 @@ C_pkg  .3000pF NA  NA
 61     VIN-E       NC          NA NA NA
 62     AVDD        POWER       NA NA NA
 63     VIN-F       NC          NA NA NA
-64     VIN+F       NC          NA NA NA 
+64     VIN+F       NC          NA NA NA
 |
 |---------------------------------------------------------------
 [model] CLK
@@ -269,7 +269,7 @@ C_comp 2pF NA NA
 -1.8    0.000229159   NA   NA
 
 |---end clk model-------------------------------------------------
-|  
+|
 [Model] INPUT1   | CSB and Sclk pins
 Model_type Input
 Vinl =0.36
@@ -277,10 +277,10 @@ Vinh =1.44
 C_comp 3pF NA NA
 |
 | variable typ    min    max
-[Voltage Range] 1.800V NA NA 
+[Voltage Range] 1.800V NA NA
 [GND Clamp Reference] 0.000V NA NA
 [POWER Clamp Reference] 1.800V NA NA
-       
+
 [GND Clamp]
 | Voltage       I(typ)        I(min)        I(max)
 
@@ -451,7 +451,7 @@ Vinh =1.44
 3.6      0.00       NA  NA
 |
 [POWER Clamp]
-|             
+|
 3.60    0.00       NA  NA
 1.80    0.000      NA  NA
 1.76    1.09E-06   NA  NA
@@ -739,7 +739,7 @@ Vref  =   0.000V
 [PULLDOWN Reference] 0.00V NA  NA
 [PULLUP Reference] 1.80V NA NA
 |
-|                    
+|
 [Pulldown]
 | Voltage       I(typ)        I(min)        I(max)
 -1.8    -0.192       NA  NA
@@ -840,7 +840,7 @@ Vref  =   0.000V
 3.04    0.093452    NA  NA
 3.1     0.099998    NA  NA
 3.8     0.18167     NA  NA
-|   end pulldown 
+|   end pulldown
 |
 [Pullup]
 | Voltage       I(typ)        I(min)        I(max)
@@ -922,12 +922,12 @@ Vref  =   0.000V
 -1.8     0.188          NA  NA
 
 |  end pullup
-|           
+|
 [Ramp]
 |              typ          min        max
-dV/dt_r     0.290V/0.370ns      NA         NA       
+dV/dt_r     0.290V/0.370ns      NA         NA
 dV/dt_f     0.290V/0.440ns      NA         NA
-R_load=1k  
+R_load=1k
 |---end ouput1 model---------------------------------------------------
 |
 [MODEL] IO       |  SDIO/ODM PIN  data is from simulations
@@ -937,7 +937,7 @@ C_comp                  3.000pF     2.000pF    4.000pF
 Vref  =   0.000V
 Vinl = 0.36
 Vinh = 1.44
-[Voltage Range] 1.800V NA NA 
+[Voltage Range] 1.800V NA NA
 [GND Clamp Reference] 0.000V NA NA
 [POWER Clamp Reference] 1.800V NA NA
 [PULLDOWN Reference] 0.00V NA  NA
@@ -1121,13 +1121,11 @@ Vinh = 1.44
  3.4    0.1143201     NA  NA
  3.5    0.293         NA  NA
  3.6    0.297         NA  NA
-|   end pulldown  
+|   end pulldown
 [RAMP]
 |
 dV/dt_r    0.84V/36.0ns    NA   NA
-dV/dt_f    0.84V/23.2ns    NA   NA                            
+dV/dt_f    0.84V/23.2ns    NA   NA
 |-----end IO model----------------------------------------------------------
 
 [End]
-
-

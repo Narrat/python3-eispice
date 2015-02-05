@@ -1,7 +1,7 @@
 |***************************************************************************
-| u26a.ibs * IBIS 4.0 Model 
+| u26a.ibs * IBIS 4.0 Model
 | 256Mb DDR-2 SDRAM - Die Revision "B"
-| Valid for DDR2-400 and DDR2-533 operation 
+| Valid for DDR2-400 and DDR2-533 operation
 |
 |  Part Number        VDD/VDDQ          Architecture        Package
 | MT47H64M4BP        1.8V/1.8V           64Meg x 4          60-Ball FBGA
@@ -15,7 +15,7 @@
 [IBIS Ver]    4.0
 [File name]   u26a.ibs
 [Date]        05/03/2007
-[File Rev]    2.4 
+[File Rev]    2.4
 [Source]      From silicon level SPICE model at Micron Technology, Inc.
                   Micron Technology, Inc.
                   8000 S. Federal Way
@@ -58,17 +58,17 @@
 |
 |IQ Level 0 - 0 errors 9 warnings
 |IQ Level 1 - All checks done for completeness and correctness
-|IQ Level 2 - HSPICE Correlation 
+|IQ Level 2 - HSPICE Correlation
 |IQ Buffer DQ_FULL/DQ_FULL_ODT50/DQ_FULL_ODT75/DQ_FULL_ODT150: Quality level 2b
 |IQ Buffer DQ_HALF/DQ_HALF_ODT50/DQ_FULL_ODT75/DQ_FULL_ODT150: Quality level 2b
 |IQ Buffer RDQS_FULL/RDQS_HALF: Quality level 2b
 |IQ Buffer DM_INPUT/DM_ODT50/DM_ODT75/DM_ODT150: Quality level 2b
 |
-|IQ Level 0 
+|IQ Level 0
 |    All Submodels: When running through ibischk4.0, this file
 |    contains 9 warnings about pullup and pulldown being non-monotonic.
-|    When [Submodel] I-V curves are added to original [Power Clamp] and 
-|    [Gnd Clamp] curves, the resultant curve is monotonic.  This is not 
+|    When [Submodel] I-V curves are added to original [Power Clamp] and
+|    [Gnd Clamp] curves, the resultant curve is monotonic.  This is not
 |    checked correctly with the IBIS parser.
 |IQ WARNING (line 11650) - GND Clamp Typical data is non-monotonic
 |IQ WARNING (line 11653) - GND Clamp Minimum data is non-monotonic
@@ -79,15 +79,15 @@
 |IQ WARNING (line 11903) - GND Clamp Typical data is non-monotonic
 |IQ WARNING (line 11906) - GND Clamp Minimum data is non-monotonic
 |IQ WARNING (line 11907) - GND Clamp Maximum data is non-monotonic
-|    
+|
 |IQ Level 1
 |    All Level 1 checks performed and are either OK or NA
-|    
-|IQ Level 2
-|    Using VT IBIS Data compared to source hspice models 
 |
-|IQ Level 2b 
-|    C_comp laboratory and hspice correlation  
+|IQ Level 2
+|    Using VT IBIS Data compared to source hspice models
+|
+|IQ Level 2b
+|    C_comp laboratory and hspice correlation
 |
 |IQ BEGIN IBIS Quality Checklist
 |IQ FILE: u26a.ibs                  IQ Level:       1
@@ -116,16 +116,16 @@
 |IQ MODEL: NF_INPUT                 IQ Level:       2b
 |IQ END IBIS Quality Checklist
 |################################################################
-|                
+|
 [Disclaimer]  This software code and all associated documentation, comments
               or other information (collectively "Software") is provided
               "AS IS" without warranty of any kind. MICRON TECHNOLOGY, INC.
               ("MTI") EXPRESSLY DISCLAIMS ALL WARRANTIES EXPRESS OR IMPLIED,
               INCLUDING BUT NOT LIMITED TO, NONINFRINGEMENT OF THIRD PARTY
               RIGHTS, AND ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR
-              FITNESS FOR ANY PARTICULAR PURPOSE. MTI DOES NOT WARRANT THAT 
-              THE SOFTWARE WILL MEET YOUR REQUIREMENTS, OR THAT THE 
-              OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE. 
+              FITNESS FOR ANY PARTICULAR PURPOSE. MTI DOES NOT WARRANT THAT
+              THE SOFTWARE WILL MEET YOUR REQUIREMENTS, OR THAT THE
+              OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE.
               FURTHERMORE, MTI DOES NOT MAKE ANY REPRESENTATIONS REGARDING
               THE USE OR THE RESULTS OF THE USE OF THE SOFTWARE IN TERMS OF
               ITS CORRECTNESS, ACCURACY, RELIABILITY, OR OTHERWISE. THE
@@ -137,10 +137,10 @@
               BUSINESS INTERRUPTION, OR LOSS OF INFORMATION) ARISING OUT OF
               YOUR USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF MTI HAS
               BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. Because some
-              jurisdictions prohibit the exclusion or limitation of 
+              jurisdictions prohibit the exclusion or limitation of
               liability for consequential or incidental damages, the above
               limitation may not apply to you.
-| 
+|
 [Copyright]   Copyright 2003 Micron Technology, Inc. All rights reserved.
 |
 |***************************************************************************
@@ -151,73 +151,73 @@
 [Manufacturer]  Micron Technology, Inc.
 [Package]       | 8mm x 12mm FBGA
 |variable              typ          min         max
-R_pkg                  70.0m        57.0m       92.3m 
+R_pkg                  70.0m        57.0m       92.3m
 L_pkg                  2.21nH       1.46nH      3.32nH
 C_pkg                  0.30pF       0.25pF      0.39pF
 |
-| 
+|
 [Pin]  signal_name   model_name   R_pin   L_pin    C_pin
 |
-A1      VDD          POWER        44.3m   1.99nH   0.59pF  
-A2      NC           NC           NA      NA       NA      
-A3      VSS          GND          30.9m   1.00nH   0.43pF  
-A7      VSSQ         GND          61.4m   2.01nH   0.37pF  
-A8      DQS#         DQS#         79.7m   2.84nH   0.37pF  
-A9      VDDQ         POWER        92.9m   3.63nH   0.42pF  
-B1      NF           NF_INPUT     93.6m   3.62nH   0.42pF 
-B2      VSSQ         GND          77.3m   2.73nH   0.42pF  
-B3      DM           DM           62.6m   1.97nH   0.29pF  
-B7      DQS          DQ           63.0m   1.89nH   0.29pF  
-B8      VSSQ         GND          78.3m   2.66nH   0.42pF  
-B9      NF           NF_INPUT     93.4m   3.54nH   0.41pF 
-C1      VDDQ         POWER        101.1m  3.95nH   0.47pF  
-C2      DQ1          DQ           77.6m   2.65nH   0.35pF  
-C3      VDDQ         POWER        63.5m   2.00nH   0.45pF  
-C7      VDDQ         POWER        62.2m   1.88nH   0.42pF  
-C8      DQ0          DQ           77.9m   2.71nH   0.35pF  
-C9      VDDQ         POWER        90.8m   3.56nH   0.42pF  
-D1      NF           NF_INPUT     95.3m   3.64nH   0.43pF 
-D2      VSSQ         GND          81.3m   2.65nH   0.50pF  
-D3      DQ3          DQ           62.2m   1.91nH   0.29pF  
-D7      DQ2          DQ           62.6m   1.94nH   0.29pF  
-D8      VSSQ         GND          77.2m   2.72nH   0.42pF  
-D9      NF           NF_INPUT     92.0m   3.47nH   0.41pF 
-E1      VDDL         POWER        89.4m   3.43nH   0.39pF  
-E2      VREF         POWER        75.8m   2.60nH   0.42pF  
-E3      VSS          GND          61.6m   1.82nH   0.29pF  
-E7      VSSDL        GND          61.4m   1.89nH   0.41pF  
-E8      CK           CLKIN        77.4m   2.69nH   0.35pF  
-E9      VDD          POWER        99.9m   3.76nH   0.44pF  
-F2      CKE          INPUT        78.2m   2.84nH   0.33pF  
-F3      WE#          INPUT        62.6m   1.98nH   0.28pF  
-F7      RAS#         INPUT        61.3m   1.72nH   0.28pF  
-F8      CK#          CLKIN        80.8m   2.55nH   0.36pF  
-F9      ODT          INPUT        92.3m   3.32nH   0.39pF  
-G1      RFU          NC           NA      NA       NA      
-G2      BA0          INPUT        81.5m   2.67nH   0.36pF  
-G3      BA1          INPUT        64.7m   1.97nH   0.29pF  
-G7      CAS#         INPUT        59.7m   1.63nH   0.27pF  
-G8      CS#          INPUT        75.1m   2.38nH   0.32pF  
-H2      A10          INPUT        78.2m   2.60nH   0.32pF  
-H3      A1           INPUT        63.7m   1.80nH   0.28pF  
-H7      A2           INPUT        61.2m   1.80nH   0.27pF  
-H8      A0           INPUT        77.4m   2.59nH   0.32pF  
-H9      VDD          POWER        88.2m   3.36nH   0.36pF  
-J1      VSS          GND          103.4m  3.77nH   0.42pF  
-J2      A3           INPUT        75.0m   2.42nH   0.30pF  
-J3      A5           INPUT        59.5m   1.65nH   0.26pF  
-J7      A6           INPUT        60.0m   1.66nH   0.26pF  
-J8      A4           INPUT        73.7m   2.40nH   0.30pF  
-K2      A7           INPUT        72.1m   2.26nH   0.29pF  
-K3      A9           INPUT        58.5m   1.50nH   0.25pF  
-K7      A11          INPUT        57.0m   1.46nH   0.25pF  
-K8      A8           INPUT        74.4m   2.28nH   0.29pF  
-K9      VSS          GND          92.7m   3.25nH   0.33pF  
-L1      VDD          POWER        84.0m   3.08nH   0.31pF  
-L2      A12          INPUT        70.2m   2.18nH   0.30pF  
-L3      RFU          NC           NA      NA       NA      
-L7      RFU          NC           NA      NA       NA      
-L8      RFU          NC           NA      NA       NA      
+A1      VDD          POWER        44.3m   1.99nH   0.59pF
+A2      NC           NC           NA      NA       NA
+A3      VSS          GND          30.9m   1.00nH   0.43pF
+A7      VSSQ         GND          61.4m   2.01nH   0.37pF
+A8      DQS#         DQS#         79.7m   2.84nH   0.37pF
+A9      VDDQ         POWER        92.9m   3.63nH   0.42pF
+B1      NF           NF_INPUT     93.6m   3.62nH   0.42pF
+B2      VSSQ         GND          77.3m   2.73nH   0.42pF
+B3      DM           DM           62.6m   1.97nH   0.29pF
+B7      DQS          DQ           63.0m   1.89nH   0.29pF
+B8      VSSQ         GND          78.3m   2.66nH   0.42pF
+B9      NF           NF_INPUT     93.4m   3.54nH   0.41pF
+C1      VDDQ         POWER        101.1m  3.95nH   0.47pF
+C2      DQ1          DQ           77.6m   2.65nH   0.35pF
+C3      VDDQ         POWER        63.5m   2.00nH   0.45pF
+C7      VDDQ         POWER        62.2m   1.88nH   0.42pF
+C8      DQ0          DQ           77.9m   2.71nH   0.35pF
+C9      VDDQ         POWER        90.8m   3.56nH   0.42pF
+D1      NF           NF_INPUT     95.3m   3.64nH   0.43pF
+D2      VSSQ         GND          81.3m   2.65nH   0.50pF
+D3      DQ3          DQ           62.2m   1.91nH   0.29pF
+D7      DQ2          DQ           62.6m   1.94nH   0.29pF
+D8      VSSQ         GND          77.2m   2.72nH   0.42pF
+D9      NF           NF_INPUT     92.0m   3.47nH   0.41pF
+E1      VDDL         POWER        89.4m   3.43nH   0.39pF
+E2      VREF         POWER        75.8m   2.60nH   0.42pF
+E3      VSS          GND          61.6m   1.82nH   0.29pF
+E7      VSSDL        GND          61.4m   1.89nH   0.41pF
+E8      CK           CLKIN        77.4m   2.69nH   0.35pF
+E9      VDD          POWER        99.9m   3.76nH   0.44pF
+F2      CKE          INPUT        78.2m   2.84nH   0.33pF
+F3      WE#          INPUT        62.6m   1.98nH   0.28pF
+F7      RAS#         INPUT        61.3m   1.72nH   0.28pF
+F8      CK#          CLKIN        80.8m   2.55nH   0.36pF
+F9      ODT          INPUT        92.3m   3.32nH   0.39pF
+G1      RFU          NC           NA      NA       NA
+G2      BA0          INPUT        81.5m   2.67nH   0.36pF
+G3      BA1          INPUT        64.7m   1.97nH   0.29pF
+G7      CAS#         INPUT        59.7m   1.63nH   0.27pF
+G8      CS#          INPUT        75.1m   2.38nH   0.32pF
+H2      A10          INPUT        78.2m   2.60nH   0.32pF
+H3      A1           INPUT        63.7m   1.80nH   0.28pF
+H7      A2           INPUT        61.2m   1.80nH   0.27pF
+H8      A0           INPUT        77.4m   2.59nH   0.32pF
+H9      VDD          POWER        88.2m   3.36nH   0.36pF
+J1      VSS          GND          103.4m  3.77nH   0.42pF
+J2      A3           INPUT        75.0m   2.42nH   0.30pF
+J3      A5           INPUT        59.5m   1.65nH   0.26pF
+J7      A6           INPUT        60.0m   1.66nH   0.26pF
+J8      A4           INPUT        73.7m   2.40nH   0.30pF
+K2      A7           INPUT        72.1m   2.26nH   0.29pF
+K3      A9           INPUT        58.5m   1.50nH   0.25pF
+K7      A11          INPUT        57.0m   1.46nH   0.25pF
+K8      A8           INPUT        74.4m   2.28nH   0.29pF
+K9      VSS          GND          92.7m   3.25nH   0.33pF
+L1      VDD          POWER        84.0m   3.08nH   0.31pF
+L2      A12          INPUT        70.2m   2.18nH   0.30pF
+L3      RFU          NC           NA      NA       NA
+L7      RFU          NC           NA      NA       NA
+L8      RFU          NC           NA      NA       NA
 |
 |**********************DIFF PIN*********************************************
 [Diff_pin]     inv_pin     vdiff     tdelay_typ     tdelay_min    tdelay_max
@@ -236,73 +236,73 @@ L8      RFU          NC           NA      NA       NA
 [Manufacturer]  Micron Technology, Inc.
 [Package]       | 8mm x 12mm FBGA with Common Landing Pattern Ballout
 |variable              typ          min         max
-R_pkg                  70.0m        57.0m       92.3m 
+R_pkg                  70.0m        57.0m       92.3m
 L_pkg                  2.21nH       1.46nH      3.32nH
 C_pkg                  0.30pF       0.25pF      0.39pF
 |
-| 
+|
 [Pin]   signal_name  model_name   R_pin   L_pin    C_pin
 |
-H1      VDD          POWER        44.3m   1.99nH   0.59pF  
-H2      NC           NC           NA      NA       NA      
-H3      VSS          GND          30.9m   1.00nH   0.43pF  
-H7      VSSQ         GND          61.4m   2.01nH   0.37pF  
-H8      DQS#         DQS#         79.7m   2.84nH   0.37pF  
-H9      VDDQ         POWER        92.9m   3.63nH   0.42pF  
-J1      NF           NF_INPUT     93.6m   3.62nH   0.42pF 
-J2      VSSQ         GND          77.3m   2.73nH   0.42pF  
-J3      DM           DM           62.6m   1.97nH   0.29pF  
-J7      DQS          DQ           63.0m   1.89nH   0.29pF  
-J8      VSSQ         GND          78.3m   2.66nH   0.42pF  
-J9      NF           NF_INPUT     93.4m   3.54nH   0.41pF 
-K1      VDDQ         POWER        101.1m  3.95nH   0.47pF  
-K2      DQ1          DQ           77.6m   2.65nH   0.35pF  
-K3      VDDQ         POWER        63.5m   2.00nH   0.45pF  
-K7      VDDQ         POWER        62.2m   1.88nH   0.42pF  
-K8      DQ0          DQ           77.9m   2.71nH   0.35pF  
-K9      VDDQ         POWER        90.8m   3.56nH   0.42pF  
-L1      NF           NF_INPUT     95.3m   3.64nH   0.43pF 
-L2      VSSQ         GND          81.3m   2.65nH   0.50pF  
-L3      DQ3          DQ           62.2m   1.91nH   0.29pF  
-L7      DQ2          DQ           62.6m   1.94nH   0.29pF  
-L8      VSSQ         GND          77.2m   2.72nH   0.42pF  
-L9      NF           NF_INPUT     92.0m   3.47nH   0.41pF 
-M1      VDDL         POWER        89.4m   3.43nH   0.39pF  
-M2      VREF         POWER        75.8m   2.60nH   0.42pF  
-M3      VSS          GND          61.6m   1.82nH   0.29pF  
-M7      VSSDL        GND          61.4m   1.89nH   0.41pF  
-M8      CK           CLKIN        77.4m   2.69nH   0.35pF  
-M9      VDD          POWER        99.9m   3.76nH   0.44pF  
-N2      CKE          INPUT        78.2m   2.84nH   0.33pF  
-N3      WE#          INPUT        62.6m   1.98nH   0.28pF  
-N7      RAS#         INPUT        61.3m   1.72nH   0.28pF  
-N8      CK#          CLKIN        80.8m   2.55nH   0.36pF  
-N9      ODT          INPUT        92.3m   3.32nH   0.39pF  
-P1      RFU          NC           NA      NA       NA      
-P2      BA0          INPUT        81.5m   2.67nH   0.36pF  
-P3      BA1          INPUT        64.7m   1.97nH   0.29pF  
-P7      CAS#         INPUT        59.7m   1.63nH   0.27pF  
-P8      CS#          INPUT        75.1m   2.38nH   0.32pF  
-R2      A10          INPUT        78.2m   2.60nH   0.32pF  
-R3      A1           INPUT        63.7m   1.80nH   0.28pF  
-R7      A2           INPUT        61.2m   1.80nH   0.27pF  
-R8      A0           INPUT        77.4m   2.59nH   0.32pF  
-R9      VDD          POWER        88.2m   3.36nH   0.36pF  
-T1      VSS          GND          103.4m  3.77nH   0.42pF  
-T2      A3           INPUT        75.0m   2.42nH   0.30pF  
-T3      A5           INPUT        59.5m   1.65nH   0.26pF  
-T7      A6           INPUT        60.0m   1.66nH   0.26pF  
-T8      A4           INPUT        73.7m   2.40nH   0.30pF  
-U2      A7           INPUT        72.1m   2.26nH   0.29pF  
-U3      A9           INPUT        58.5m   1.50nH   0.25pF  
-U7      A11          INPUT        57.0m   1.46nH   0.25pF  
-U8      A8           INPUT        74.4m   2.28nH   0.29pF  
-U9      VSS          GND          92.7m   3.25nH   0.33pF  
-V1      VDD          POWER        84.0m   3.08nH   0.31pF  
-V2      A12          INPUT        70.2m   2.18nH   0.30pF  
-V3      RFU          NC           NA      NA       NA      
-V7      RFU          NC           NA      NA       NA      
-V8      RFU          NC           NA      NA       NA      
+H1      VDD          POWER        44.3m   1.99nH   0.59pF
+H2      NC           NC           NA      NA       NA
+H3      VSS          GND          30.9m   1.00nH   0.43pF
+H7      VSSQ         GND          61.4m   2.01nH   0.37pF
+H8      DQS#         DQS#         79.7m   2.84nH   0.37pF
+H9      VDDQ         POWER        92.9m   3.63nH   0.42pF
+J1      NF           NF_INPUT     93.6m   3.62nH   0.42pF
+J2      VSSQ         GND          77.3m   2.73nH   0.42pF
+J3      DM           DM           62.6m   1.97nH   0.29pF
+J7      DQS          DQ           63.0m   1.89nH   0.29pF
+J8      VSSQ         GND          78.3m   2.66nH   0.42pF
+J9      NF           NF_INPUT     93.4m   3.54nH   0.41pF
+K1      VDDQ         POWER        101.1m  3.95nH   0.47pF
+K2      DQ1          DQ           77.6m   2.65nH   0.35pF
+K3      VDDQ         POWER        63.5m   2.00nH   0.45pF
+K7      VDDQ         POWER        62.2m   1.88nH   0.42pF
+K8      DQ0          DQ           77.9m   2.71nH   0.35pF
+K9      VDDQ         POWER        90.8m   3.56nH   0.42pF
+L1      NF           NF_INPUT     95.3m   3.64nH   0.43pF
+L2      VSSQ         GND          81.3m   2.65nH   0.50pF
+L3      DQ3          DQ           62.2m   1.91nH   0.29pF
+L7      DQ2          DQ           62.6m   1.94nH   0.29pF
+L8      VSSQ         GND          77.2m   2.72nH   0.42pF
+L9      NF           NF_INPUT     92.0m   3.47nH   0.41pF
+M1      VDDL         POWER        89.4m   3.43nH   0.39pF
+M2      VREF         POWER        75.8m   2.60nH   0.42pF
+M3      VSS          GND          61.6m   1.82nH   0.29pF
+M7      VSSDL        GND          61.4m   1.89nH   0.41pF
+M8      CK           CLKIN        77.4m   2.69nH   0.35pF
+M9      VDD          POWER        99.9m   3.76nH   0.44pF
+N2      CKE          INPUT        78.2m   2.84nH   0.33pF
+N3      WE#          INPUT        62.6m   1.98nH   0.28pF
+N7      RAS#         INPUT        61.3m   1.72nH   0.28pF
+N8      CK#          CLKIN        80.8m   2.55nH   0.36pF
+N9      ODT          INPUT        92.3m   3.32nH   0.39pF
+P1      RFU          NC           NA      NA       NA
+P2      BA0          INPUT        81.5m   2.67nH   0.36pF
+P3      BA1          INPUT        64.7m   1.97nH   0.29pF
+P7      CAS#         INPUT        59.7m   1.63nH   0.27pF
+P8      CS#          INPUT        75.1m   2.38nH   0.32pF
+R2      A10          INPUT        78.2m   2.60nH   0.32pF
+R3      A1           INPUT        63.7m   1.80nH   0.28pF
+R7      A2           INPUT        61.2m   1.80nH   0.27pF
+R8      A0           INPUT        77.4m   2.59nH   0.32pF
+R9      VDD          POWER        88.2m   3.36nH   0.36pF
+T1      VSS          GND          103.4m  3.77nH   0.42pF
+T2      A3           INPUT        75.0m   2.42nH   0.30pF
+T3      A5           INPUT        59.5m   1.65nH   0.26pF
+T7      A6           INPUT        60.0m   1.66nH   0.26pF
+T8      A4           INPUT        73.7m   2.40nH   0.30pF
+U2      A7           INPUT        72.1m   2.26nH   0.29pF
+U3      A9           INPUT        58.5m   1.50nH   0.25pF
+U7      A11          INPUT        57.0m   1.46nH   0.25pF
+U8      A8           INPUT        74.4m   2.28nH   0.29pF
+U9      VSS          GND          92.7m   3.25nH   0.33pF
+V1      VDD          POWER        84.0m   3.08nH   0.31pF
+V2      A12          INPUT        70.2m   2.18nH   0.30pF
+V3      RFU          NC           NA      NA       NA
+V7      RFU          NC           NA      NA       NA
+V8      RFU          NC           NA      NA       NA
 |
 |**********************DIFF PIN*********************************************
 [Diff_pin]     inv_pin     vdiff     tdelay_typ     tdelay_min    tdelay_max
@@ -324,70 +324,70 @@ V8      RFU          NC           NA      NA       NA
 R_pkg                  71.9m        57.0m       95.3m
 L_pkg                  2.36nH       1.46nH      3.64nH
 C_pkg                  0.32pF       0.25pF      0.43pF
-| 
-| 
+|
+|
 [Pin]  signal_name   model_name   R_pin   L_pin     C_pin
 |
-A1      VDD          POWER        44.3m    1.99nH   0.59pF 
-A2      NU,RDQS#     RDQS#        76.8m    2.69nH   0.35pF 
-A3      VSS          GND          30.9m    1.00nH   0.43pF 
-A7      VSSQ         GND          61.4m    2.01nH   0.37pF 
-A8      DQS#         DQS#         79.7m    2.84nH   0.37pF 
-A9      VDDQ         POWER        92.9m    3.63nH   0.42pF 
-B1      DQ6          DQ           93.6m    3.62nH   0.42pF 
-B2      VSSQ         GND          77.3m    2.73nH   0.42pF 
-B3      DM,RDQS      DM_RDQS      62.6m    1.97nH   0.29pF 
-B7      DQS          DQ           63.0m    1.89nH   0.29pF 
-B8      VSSQ         GND          78.3m    2.66nH   0.42pF 
-B9      DQ7          DQ           93.4m    3.54nH   0.41pF 
-C1      VDDQ         POWER        101.1m   3.95nH   0.47pF 
-C2      DQ1          DQ           77.6m    2.65nH   0.35pF 
-C3      VDDQ         POWER        63.5m    2.00nH   0.45pF 
-C7      VDDQ         POWER        62.2m    1.88nH   0.42pF 
-C8      DQ0          DQ           77.9m    2.71nH   0.35pF 
-C9      VDDQ         POWER        90.8m    3.56nH   0.42pF 
-D1      DQ4          DQ           95.3m    3.64nH   0.43pF 
-D2      VSSQ         GND          81.3m    2.65nH   0.50pF 
-D3      DQ3          DQ           62.2m    1.91nH   0.29pF 
-D7      DQ2          DQ           62.6m    1.94nH   0.29pF 
-D8      VSSQ         GND          77.2m    2.72nH   0.42pF 
-D9      DQ5          DQ           92.0m    3.47nH   0.41pF 
-E1      VDDL         POWER        89.4m    3.43nH   0.39pF 
-E2      VREF         POWER        75.8m    2.60nH   0.42pF 
-E3      VSS          GND          61.6m    1.82nH   0.29pF 
-E7      VSSDL        GND          61.4m    1.89nH   0.41pF 
-E8      CK           CLKIN        77.4m    2.69nH   0.35pF 
-E9      VDD          POWER        99.9m    3.76nH   0.44pF 
-F2      CKE          INPUT        78.2m    2.84nH   0.33pF 
-F3      WE#          INPUT        62.6m    1.98nH   0.28pF 
-F7      RAS#         INPUT        61.3m    1.72nH   0.28pF 
-F8      CK#          CLKIN        80.8m    2.55nH   0.36pF 
-F9      ODT          INPUT        92.3m    3.32nH   0.39pF 
-G1      RFU          NC           NA       NA       NA     
-G2      BA0          INPUT        81.5m    2.67nH   0.36pF 
-G3      BA1          INPUT        64.7m    1.97nH   0.29pF 
-G7      CAS#         INPUT        59.7m    1.63nH   0.27pF 
-G8      CS#          INPUT        75.1m    2.38nH   0.32pF 
-H2      A10          INPUT        78.2m    2.60nH   0.32pF 
-H3      A1           INPUT        63.7m    1.80nH   0.28pF 
-H7      A2           INPUT        61.2m    1.80nH   0.27pF 
-H8      A0           INPUT        77.4m    2.59nH   0.32pF 
-H9      VDD          POWER        88.2m    3.36nH   0.36pF 
-J1      VSS          GND          103.4m   3.77nH   0.42pF 
-J2      A3           INPUT        75.0m    2.42nH   0.30pF 
-J3      A5           INPUT        59.5m    1.65nH   0.26pF 
-J7      A6           INPUT        60.0m    1.66nH   0.26pF 
-J8      A4           INPUT        73.7m    2.40nH   0.30pF 
-K2      A7           INPUT        72.1m    2.26nH   0.29pF 
-K3      A9           INPUT        58.5m    1.50nH   0.25pF 
-K7      A11          INPUT        57.0m    1.46nH   0.25pF 
-K8      A8           INPUT        74.4m    2.28nH   0.29pF 
-K9      VSS          GND          92.7m    3.25nH   0.33pF 
-L1      VDD          POWER        84.0m    3.08nH   0.31pF 
-L2      A12          INPUT        70.2m    2.18nH   0.30pF 
-L3      RFU          NC           NA       NA       NA     
-L7      RFU          NC           NA       NA       NA     
-L8      RFU          NC           NA       NA       NA     
+A1      VDD          POWER        44.3m    1.99nH   0.59pF
+A2      NU,RDQS#     RDQS#        76.8m    2.69nH   0.35pF
+A3      VSS          GND          30.9m    1.00nH   0.43pF
+A7      VSSQ         GND          61.4m    2.01nH   0.37pF
+A8      DQS#         DQS#         79.7m    2.84nH   0.37pF
+A9      VDDQ         POWER        92.9m    3.63nH   0.42pF
+B1      DQ6          DQ           93.6m    3.62nH   0.42pF
+B2      VSSQ         GND          77.3m    2.73nH   0.42pF
+B3      DM,RDQS      DM_RDQS      62.6m    1.97nH   0.29pF
+B7      DQS          DQ           63.0m    1.89nH   0.29pF
+B8      VSSQ         GND          78.3m    2.66nH   0.42pF
+B9      DQ7          DQ           93.4m    3.54nH   0.41pF
+C1      VDDQ         POWER        101.1m   3.95nH   0.47pF
+C2      DQ1          DQ           77.6m    2.65nH   0.35pF
+C3      VDDQ         POWER        63.5m    2.00nH   0.45pF
+C7      VDDQ         POWER        62.2m    1.88nH   0.42pF
+C8      DQ0          DQ           77.9m    2.71nH   0.35pF
+C9      VDDQ         POWER        90.8m    3.56nH   0.42pF
+D1      DQ4          DQ           95.3m    3.64nH   0.43pF
+D2      VSSQ         GND          81.3m    2.65nH   0.50pF
+D3      DQ3          DQ           62.2m    1.91nH   0.29pF
+D7      DQ2          DQ           62.6m    1.94nH   0.29pF
+D8      VSSQ         GND          77.2m    2.72nH   0.42pF
+D9      DQ5          DQ           92.0m    3.47nH   0.41pF
+E1      VDDL         POWER        89.4m    3.43nH   0.39pF
+E2      VREF         POWER        75.8m    2.60nH   0.42pF
+E3      VSS          GND          61.6m    1.82nH   0.29pF
+E7      VSSDL        GND          61.4m    1.89nH   0.41pF
+E8      CK           CLKIN        77.4m    2.69nH   0.35pF
+E9      VDD          POWER        99.9m    3.76nH   0.44pF
+F2      CKE          INPUT        78.2m    2.84nH   0.33pF
+F3      WE#          INPUT        62.6m    1.98nH   0.28pF
+F7      RAS#         INPUT        61.3m    1.72nH   0.28pF
+F8      CK#          CLKIN        80.8m    2.55nH   0.36pF
+F9      ODT          INPUT        92.3m    3.32nH   0.39pF
+G1      RFU          NC           NA       NA       NA
+G2      BA0          INPUT        81.5m    2.67nH   0.36pF
+G3      BA1          INPUT        64.7m    1.97nH   0.29pF
+G7      CAS#         INPUT        59.7m    1.63nH   0.27pF
+G8      CS#          INPUT        75.1m    2.38nH   0.32pF
+H2      A10          INPUT        78.2m    2.60nH   0.32pF
+H3      A1           INPUT        63.7m    1.80nH   0.28pF
+H7      A2           INPUT        61.2m    1.80nH   0.27pF
+H8      A0           INPUT        77.4m    2.59nH   0.32pF
+H9      VDD          POWER        88.2m    3.36nH   0.36pF
+J1      VSS          GND          103.4m   3.77nH   0.42pF
+J2      A3           INPUT        75.0m    2.42nH   0.30pF
+J3      A5           INPUT        59.5m    1.65nH   0.26pF
+J7      A6           INPUT        60.0m    1.66nH   0.26pF
+J8      A4           INPUT        73.7m    2.40nH   0.30pF
+K2      A7           INPUT        72.1m    2.26nH   0.29pF
+K3      A9           INPUT        58.5m    1.50nH   0.25pF
+K7      A11          INPUT        57.0m    1.46nH   0.25pF
+K8      A8           INPUT        74.4m    2.28nH   0.29pF
+K9      VSS          GND          92.7m    3.25nH   0.33pF
+L1      VDD          POWER        84.0m    3.08nH   0.31pF
+L2      A12          INPUT        70.2m    2.18nH   0.30pF
+L3      RFU          NC           NA       NA       NA
+L7      RFU          NC           NA       NA       NA
+L8      RFU          NC           NA       NA       NA
 |
 |**********************DIFF PIN*********************************************
 [Diff_pin]     inv_pin     vdiff     tdelay_typ     tdelay_min    tdelay_max
@@ -411,70 +411,70 @@ L8      RFU          NC           NA       NA       NA
 R_pkg                  71.9m        57.0m       95.3m
 L_pkg                  2.36nH       1.46nH      3.64nH
 C_pkg                  0.32pF       0.25pF      0.43pF
-| 
-| 
+|
+|
 [Pin]   signal_name  model_name   R_pin    L_pin    C_pin
 |
-H1      VDD          POWER        44.3m    1.99nH   0.59pF 
-H2      NU,RDQS#     RDQS#        76.8m    2.69nH   0.35pF 
-H3      VSS          GND          30.9m    1.00nH   0.43pF 
-H7      VSSQ         GND          61.4m    2.01nH   0.37pF 
-H8      DQS#         DQS#         79.7m    2.84nH   0.37pF 
-H9      VDDQ         POWER        92.9m    3.63nH   0.42pF 
-J1      DQ6          DQ           93.6m    3.62nH   0.42pF 
-J2      VSSQ         GND          77.3m    2.73nH   0.42pF 
-J3      DM,RDQS      DM_RDQS      62.6m    1.97nH   0.29pF 
-J7      DQS          DQ           63.0m    1.89nH   0.29pF 
-J8      VSSQ         GND          78.3m    2.66nH   0.42pF 
-J9      DQ7          DQ           93.4m    3.54nH   0.41pF 
-K1      VDDQ         POWER        101.1m   3.95nH   0.47pF 
-K2      DQ1          DQ           77.6m    2.65nH   0.35pF 
-K3      VDDQ         POWER        63.5m    2.00nH   0.45pF 
-K7      VDDQ         POWER        62.2m    1.88nH   0.42pF 
-K8      DQ0          DQ           77.9m    2.71nH   0.35pF 
-K9      VDDQ         POWER        90.8m    3.56nH   0.42pF 
-L1      DQ4          DQ           95.3m    3.64nH   0.43pF 
-L2      VSSQ         GND          81.3m    2.65nH   0.50pF 
-L3      DQ3          DQ           62.2m    1.91nH   0.29pF 
-L7      DQ2          DQ           62.6m    1.94nH   0.29pF 
-L8      VSSQ         GND          77.2m    2.72nH   0.42pF 
-L9      DQ5          DQ           92.0m    3.47nH   0.41pF 
-M1      VDDL         POWER        89.4m    3.43nH   0.39pF 
-M2      VREF         POWER        75.8m    2.60nH   0.42pF 
-M3      VSS          GND          61.6m    1.82nH   0.29pF 
-M7      VSSDL        GND          61.4m    1.89nH   0.41pF 
-M8      CK           CLKIN        77.4m    2.69nH   0.35pF 
-M9      VDD          POWER        99.9m    3.76nH   0.44pF 
-N2      CKE          INPUT        78.2m    2.84nH   0.33pF 
-N3      WE#          INPUT        62.6m    1.98nH   0.28pF 
-N7      RAS#         INPUT        61.3m    1.72nH   0.28pF 
-N8      CK#          CLKIN        80.8m    2.55nH   0.36pF 
-N9      ODT          INPUT        92.3m    3.32nH   0.39pF 
-P1      RFU          NC           NA       NA       NA     
-P2      BA0          INPUT        81.5m    2.67nH   0.36pF 
-P3      BA1          INPUT        64.7m    1.97nH   0.29pF 
-P7      CAS#         INPUT        59.7m    1.63nH   0.27pF 
-P8      CS#          INPUT        75.1m    2.38nH   0.32pF 
-R2      A10          INPUT        78.2m    2.60nH   0.32pF 
-R3      A1           INPUT        63.7m    1.80nH   0.28pF 
-R7      A2           INPUT        61.2m    1.80nH   0.27pF 
-R8      A0           INPUT        77.4m    2.59nH   0.32pF 
-R9      VDD          POWER        88.2m    3.36nH   0.36pF 
-T1      VSS          GND          103.4m   3.77nH   0.42pF 
-T2      A3           INPUT        75.0m    2.42nH   0.30pF 
-T3      A5           INPUT        59.5m    1.65nH   0.26pF 
-T7      A6           INPUT        60.0m    1.66nH   0.26pF 
-T8      A4           INPUT        73.7m    2.40nH   0.30pF 
-U2      A7           INPUT        72.1m    2.26nH   0.29pF 
-U3      A9           INPUT        58.5m    1.50nH   0.25pF 
-U7      A11          INPUT        57.0m    1.46nH   0.25pF 
-U8      A8           INPUT        74.4m    2.28nH   0.29pF 
-U9      VSS          GND          92.7m    3.25nH   0.33pF 
-V1      VDD          POWER        84.0m    3.08nH   0.31pF 
-V2      A12          INPUT        70.2m    2.18nH   0.30pF 
-V3      RFU          NC           NA       NA       NA     
-V7      RFU          NC           NA       NA       NA     
-V8      RFU          NC           NA       NA       NA     
+H1      VDD          POWER        44.3m    1.99nH   0.59pF
+H2      NU,RDQS#     RDQS#        76.8m    2.69nH   0.35pF
+H3      VSS          GND          30.9m    1.00nH   0.43pF
+H7      VSSQ         GND          61.4m    2.01nH   0.37pF
+H8      DQS#         DQS#         79.7m    2.84nH   0.37pF
+H9      VDDQ         POWER        92.9m    3.63nH   0.42pF
+J1      DQ6          DQ           93.6m    3.62nH   0.42pF
+J2      VSSQ         GND          77.3m    2.73nH   0.42pF
+J3      DM,RDQS      DM_RDQS      62.6m    1.97nH   0.29pF
+J7      DQS          DQ           63.0m    1.89nH   0.29pF
+J8      VSSQ         GND          78.3m    2.66nH   0.42pF
+J9      DQ7          DQ           93.4m    3.54nH   0.41pF
+K1      VDDQ         POWER        101.1m   3.95nH   0.47pF
+K2      DQ1          DQ           77.6m    2.65nH   0.35pF
+K3      VDDQ         POWER        63.5m    2.00nH   0.45pF
+K7      VDDQ         POWER        62.2m    1.88nH   0.42pF
+K8      DQ0          DQ           77.9m    2.71nH   0.35pF
+K9      VDDQ         POWER        90.8m    3.56nH   0.42pF
+L1      DQ4          DQ           95.3m    3.64nH   0.43pF
+L2      VSSQ         GND          81.3m    2.65nH   0.50pF
+L3      DQ3          DQ           62.2m    1.91nH   0.29pF
+L7      DQ2          DQ           62.6m    1.94nH   0.29pF
+L8      VSSQ         GND          77.2m    2.72nH   0.42pF
+L9      DQ5          DQ           92.0m    3.47nH   0.41pF
+M1      VDDL         POWER        89.4m    3.43nH   0.39pF
+M2      VREF         POWER        75.8m    2.60nH   0.42pF
+M3      VSS          GND          61.6m    1.82nH   0.29pF
+M7      VSSDL        GND          61.4m    1.89nH   0.41pF
+M8      CK           CLKIN        77.4m    2.69nH   0.35pF
+M9      VDD          POWER        99.9m    3.76nH   0.44pF
+N2      CKE          INPUT        78.2m    2.84nH   0.33pF
+N3      WE#          INPUT        62.6m    1.98nH   0.28pF
+N7      RAS#         INPUT        61.3m    1.72nH   0.28pF
+N8      CK#          CLKIN        80.8m    2.55nH   0.36pF
+N9      ODT          INPUT        92.3m    3.32nH   0.39pF
+P1      RFU          NC           NA       NA       NA
+P2      BA0          INPUT        81.5m    2.67nH   0.36pF
+P3      BA1          INPUT        64.7m    1.97nH   0.29pF
+P7      CAS#         INPUT        59.7m    1.63nH   0.27pF
+P8      CS#          INPUT        75.1m    2.38nH   0.32pF
+R2      A10          INPUT        78.2m    2.60nH   0.32pF
+R3      A1           INPUT        63.7m    1.80nH   0.28pF
+R7      A2           INPUT        61.2m    1.80nH   0.27pF
+R8      A0           INPUT        77.4m    2.59nH   0.32pF
+R9      VDD          POWER        88.2m    3.36nH   0.36pF
+T1      VSS          GND          103.4m   3.77nH   0.42pF
+T2      A3           INPUT        75.0m    2.42nH   0.30pF
+T3      A5           INPUT        59.5m    1.65nH   0.26pF
+T7      A6           INPUT        60.0m    1.66nH   0.26pF
+T8      A4           INPUT        73.7m    2.40nH   0.30pF
+U2      A7           INPUT        72.1m    2.26nH   0.29pF
+U3      A9           INPUT        58.5m    1.50nH   0.25pF
+U7      A11          INPUT        57.0m    1.46nH   0.25pF
+U8      A8           INPUT        74.4m    2.28nH   0.29pF
+U9      VSS          GND          92.7m    3.25nH   0.33pF
+V1      VDD          POWER        84.0m    3.08nH   0.31pF
+V2      A12          INPUT        70.2m    2.18nH   0.30pF
+V3      RFU          NC           NA       NA       NA
+V7      RFU          NC           NA       NA       NA
+V8      RFU          NC           NA       NA       NA
 |
 |**********************DIFF PIN*********************************************
 [Diff_pin]     inv_pin     vdiff     tdelay_typ     tdelay_min    tdelay_max
@@ -520,7 +520,7 @@ C_pkg                  0.27pF       0.19pF      0.37pF
 [Pin]  signal_name   model_name   R_pin   L_pin    C_pin
 |
 A1     VDD           POWER        68.3m   3.11nH   0.27pF
-A2     NC            NC           NA      NA       NA    
+A2     NC            NC           NA      NA       NA
 A3     VSS           GND          49.8m   1.57nH   0.35pF
 A7     VSSQ          GND          49.2m   1.56nH   0.28pF
 A8     NU,UDQS#      DQS#         62.1m   2.29nH   0.31pF
@@ -578,7 +578,7 @@ K3     WE#           INPUT        43.2m   1.24nH   0.19pF
 K7     RAS#          INPUT        48.4m   1.33nH   0.22pF
 K8     CK#           CLKIN        59.9m   2.07nH   0.29pF
 K9     ODT           INPUT        72.1m   2.91nH   0.37pF
-L1     RFU           NC           NA      NA       NA    
+L1     RFU           NC           NA      NA       NA
 L2     BA0           INPUT        53.9m   1.98nH   0.24pF
 L3     BA1           INPUT        43.2m   1.26nH   0.19pF
 L7     CAS#          INPUT        47.6m   1.38nH   0.21pF
@@ -600,9 +600,9 @@ P8     A8            INPUT        63.6m   2.30nH   0.32pF
 P9     VSS           GND          71.2m   3.01nH   0.29pF
 R1     VDD           POWER        71.4m   3.28nH   0.27pF
 R2     A12           INPUT        58.8m   2.21nH   0.28pF
-R3     RFU           NC           NA      NA       NA    
-R7     RFU           NC           NA      NA       NA    
-R8     RFU           NC           NA      NA       NA     
+R3     RFU           NC           NA      NA       NA
+R7     RFU           NC           NA      NA       NA
+R8     RFU           NC           NA      NA       NA
 |
 |**********************DIFF PIN*********************************************
 [Diff_pin]     inv_pin     vdiff     tdelay_typ     tdelay_min    tdelay_max
@@ -631,7 +631,7 @@ C_pkg                  0.27pF       0.19pF      0.37pF
 [Pin]  signal_name   model_name   R_pin   L_pin    C_pin
 |
 D1     VDD           POWER        68.3m   3.11nH   0.27pF
-D2     NC            NC           NA      NA       NA    
+D2     NC            NC           NA      NA       NA
 D3     VSS           GND          49.8m   1.57nH   0.35pF
 D7     VSSQ          GND          49.2m   1.56nH   0.28pF
 D8     NU,UDQS#      DQS#         62.1m   2.29nH   0.31pF
@@ -689,7 +689,7 @@ N3     WE#           INPUT        43.2m   1.24nH   0.19pF
 N7     RAS#          INPUT        48.4m   1.33nH   0.22pF
 N8     CK#           CLKIN        59.9m   2.07nH   0.29pF
 N9     ODT           INPUT        72.1m   2.91nH   0.37pF
-P1     RFU           NC           NA      NA       NA    
+P1     RFU           NC           NA      NA       NA
 P2     BA0           INPUT        53.9m   1.98nH   0.24pF
 P3     BA1           INPUT        43.2m   1.26nH   0.19pF
 P7     CAS#          INPUT        47.6m   1.38nH   0.21pF
@@ -711,9 +711,9 @@ U8     A8            INPUT        63.6m   2.30nH   0.32pF
 U9     VSS           GND          71.2m   3.01nH   0.29pF
 V1     VDD           POWER        71.4m   3.28nH   0.27pF
 V2     A12           INPUT        58.8m   2.21nH   0.28pF
-V3     RFU           NC           NA      NA       NA    
-V7     RFU           NC           NA      NA       NA    
-V8     RFU           NC           NA      NA       NA     
+V3     RFU           NC           NA      NA       NA
+V7     RFU           NC           NA      NA       NA
+V8     RFU           NC           NA      NA       NA
 |
 |**********************DIFF PIN*********************************************
 [Diff_pin]     inv_pin     vdiff     tdelay_typ     tdelay_min    tdelay_max
@@ -742,7 +742,7 @@ DQ_FULL             Full-Strength IO Driver with no ODT
 DQ_FULL_ODT50       Full-Strength IO Driver with 50 Ohm ODT Submodel
 DQ_FULL_ODT75       Full-Strength IO Driver with 75 Ohm ODT Submodel
 DQ_FULL_ODT150      Full-Strength IO Driver with 150 Ohm ODT Submodel
-DQ_HALF             Reduced-Strength IO Driver with no ODT 
+DQ_HALF             Reduced-Strength IO Driver with no ODT
 DQ_HALF_ODT50       Reduced-Strength IO Driver with 50 Ohm ODT Submodel
 DQ_HALF_ODT75       Reduced-Strength IO Driver with 75 Ohm ODT Submodel
 DQ_HALF_ODT150      Reduced-Strength IO Driver with 150 Ohm ODT Submodel
@@ -753,14 +753,14 @@ DQ_FULL             Full-Strength IO Driver with no ODT
 DQ_FULL_ODT50       Full-Strength IO Driver with 50 Ohm ODT Submodel
 DQ_FULL_ODT75       Full-Strength IO Driver with 75 Ohm ODT Submodel
 DQ_FULL_ODT150      Full-Strength IO Driver with 150 Ohm ODT Submodel
-DQ_HALF             Reduced-Strength IO Driver with no ODT 
+DQ_HALF             Reduced-Strength IO Driver with no ODT
 DQ_HALF_ODT50       Reduced-Strength IO Driver with 50 Ohm ODT Submodel
 DQ_HALF_ODT75       Reduced-Strength IO Driver with 75 Ohm ODT Submodel
 DQ_HALF_ODT150      Reduced-Strength IO Driver with 150 Ohm ODT Submodel
-NF_INPUT            (Use to disable DQS#) 
+NF_INPUT            (Use to disable DQS#)
 |
 |***************************************************************************
-|                      MODEL DQ_FULL (Full-Strength IO Driver with no ODT)  
+|                      MODEL DQ_FULL (Full-Strength IO Driver with no ODT)
 |***************************************************************************
 |
 [Model]        DQ_FULL
@@ -1678,7 +1678,7 @@ R_fixture = 50.00Ohm
 |   MODEL DQ_FULL_ODT50 (Full-Strength IO Driver with 50 Ohm ODT Submodel)
 |***************************************************************************
 |
-[Model]        DQ_FULL_ODT50 
+[Model]        DQ_FULL_ODT50
 Model_type     I/O
 |
 Vinl = 650.000mV
@@ -1725,7 +1725,7 @@ Reference_supply Pullup_ref
 [Add Submodel]
 | Submodel Name        Mode
 50ohm_ODT              Non-Driving
-| 
+|
 |***************************************************************************
 |
 [Pulldown]
@@ -2596,10 +2596,10 @@ R_fixture = 50.00Ohm
       1.87000000E-9    -26.18861627E-6    -34.73350149E-6    -24.62441255E-6
 |
 |***************************************************************************
-|   MODEL DQ_FULL_ODT75 (Full-Strength IO Driver with 75 Ohm ODT Submodel)  
+|   MODEL DQ_FULL_ODT75 (Full-Strength IO Driver with 75 Ohm ODT Submodel)
 |***************************************************************************
 |
-[Model]        DQ_FULL_ODT75 
+[Model]        DQ_FULL_ODT75
 Model_type     I/O
 |
 Vinl = 650.000mV
@@ -2641,7 +2641,7 @@ Reference_supply Pullup_ref
 [Pullup Reference]          1.800V              1.700V              1.900V
 | Junction Temperature (Ambient temp is 25C typ, 85C min, 0C max)
 [Temperature Range]         40.0                100.0               0.0
-|   
+|
 [Add Submodel]
 | Submodel Name        Mode
 75ohm_ODT              Non-Driving
@@ -4436,7 +4436,7 @@ R_fixture = 50.00Ohm
       1.87000000E-9    -26.18861627E-6    -34.73350149E-6    -24.62441255E-6
 |
 |***************************************************************************
-|             MODEL DQ_HALF (Reduced-Strength IO Driver with no ODT)  
+|             MODEL DQ_HALF (Reduced-Strength IO Driver with no ODT)
 |***************************************************************************
 |
 [Model]        DQ_HALF
@@ -5351,11 +5351,11 @@ R_fixture = 50.00Ohm
 |   MODEL DQ_HALF_ODT50 (Half-Strength IO Driver with 50 Ohm ODT Submodel)
 |***************************************************************************
 |
-[Model]        DQ_HALF_ODT50 
+[Model]        DQ_HALF_ODT50
 Model_type     I/O
 |
 Vinl = 650.000mV
-Vinh = 1.150V 
+Vinh = 1.150V
 Vmeas = 900.000mV
 Vref = 900.000mV
 Cref = 0.0pF
@@ -6265,10 +6265,10 @@ R_fixture = 50.00Ohm
       1.87000000E-9    -29.79645721E-6    -43.07252758E-6    -23.96302949E-6
 |
 |***************************************************************************
-|   MODEL DQ_HALF_ODT75 (Half-Strength IO Driver with 75 Ohm ODT Submodel)  
+|   MODEL DQ_HALF_ODT75 (Half-Strength IO Driver with 75 Ohm ODT Submodel)
 |***************************************************************************
 |
-[Model]        DQ_HALF_ODT75 
+[Model]        DQ_HALF_ODT75
 Model_type     I/O
 |
 Vinl = 650.000mV
@@ -6310,7 +6310,7 @@ Reference_supply Pullup_ref
 [Pullup Reference]          1.800V              1.700V              1.900V
 | Junction Temperature (Ambient temp is 25C typ, 85C min, 0C max)
 [Temperature Range]         40.0                100.0               0.0
-|      
+|
 [Add Submodel]
 | Submodel Name        Mode
 75ohm_ODT              Non-Driving
@@ -8099,7 +8099,7 @@ R_fixture = 50.00Ohm
       1.87000000E-9    -29.79645721E-6    -43.07252758E-6    -23.96302949E-6
 |
 |***************************************************************************
-|                 MODEL RDQS_FULL (Full-Strength Output Driver with no ODT)   
+|                 MODEL RDQS_FULL (Full-Strength Output Driver with no ODT)
 |***************************************************************************
 |
 [Model]        RDQS_FULL
@@ -8991,7 +8991,7 @@ R_fixture = 50.00Ohm
       1.87000000E-9    -26.18861627E-6    -34.73350149E-6    -24.62441255E-6
 |
 |***************************************************************************
-|          MODEL RDQS_HALF (Reduced-Strength Output Driver with no ODT)   
+|          MODEL RDQS_HALF (Reduced-Strength Output Driver with no ODT)
 |***************************************************************************
 |
 [Model]        RDQS_HALF
@@ -9880,7 +9880,7 @@ R_fixture = 50.00Ohm
       1.87000000E-9    -29.79645721E-6    -43.07252758E-6    -23.96302949E-6
 |
 |***************************************************************************
-|                           MODEL DM_INPUT   
+|                           MODEL DM_INPUT
 |***************************************************************************
 |
 [Model]        DM_INPUT
@@ -10127,7 +10127,7 @@ Reference_supply Pullup_ref
       3.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
 |
 |***************************************************************************
-|          MODEL DM_ODT50 (DM Input model with 50 Ohm ODT Submodel)   
+|          MODEL DM_ODT50 (DM Input model with 50 Ohm ODT Submodel)
 |***************************************************************************
 |
 [Model]        DM_ODT50
@@ -10379,7 +10379,7 @@ Reference_supply Pullup_ref
       3.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
 |
 |***************************************************************************
-|          MODEL DM_ODT75 (DM Input model with 75 Ohm ODT Submodel)   
+|          MODEL DM_ODT75 (DM Input model with 75 Ohm ODT Submodel)
 |***************************************************************************
 |
 [Model]        DM_ODT75
@@ -10631,7 +10631,7 @@ Reference_supply Pullup_ref
       3.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
 |
 |***************************************************************************
-|         MODEL DM_ODT150 (DM Input model with 150 Ohm ODT Submodel)   
+|         MODEL DM_ODT150 (DM Input model with 150 Ohm ODT Submodel)
 |***************************************************************************
 |
 [Model]        DM_ODT150
@@ -10883,7 +10883,7 @@ Reference_supply Pullup_ref
       3.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
 |
 |***************************************************************************
-|                           MODEL INPUT   
+|                           MODEL INPUT
 |***************************************************************************
 |
 [Model]        INPUT
@@ -11131,7 +11131,7 @@ Reference_supply Pullup_ref
       3.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
 |
 |***************************************************************************
-|                           MODEL CLKIN   
+|                           MODEL CLKIN
 |***************************************************************************
 |
 [Model]        CLKIN
@@ -11373,7 +11373,7 @@ Tdiffslew_ac = 5.000ns |Not specified, so set to high value
       3.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
 |
 |***************************************************************************
-|                           MODEL NF_INPUT   
+|                           MODEL NF_INPUT
 |***************************************************************************
 |
 [Model]        NF_INPUT
@@ -11599,7 +11599,7 @@ C_comp                      2.690pF             2.290pF             3.070pF
       3.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
 |
 |***************************************************************************
-|                        SUBMODEL 50ohm_ODT    
+|                        SUBMODEL 50ohm_ODT
 |***************************************************************************
 |
 [Submodel]  50ohm_ODT
@@ -11725,7 +11725,7 @@ Submodel_type   Dynamic_clamp
       3.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
 |
 |***************************************************************************
-|                        SUBMODEL 75ohm_ODT    
+|                        SUBMODEL 75ohm_ODT
 |***************************************************************************
 |
 [Submodel]  75ohm_ODT
@@ -11850,7 +11850,7 @@ Submodel_type   Dynamic_clamp
       3.60000000E+0      0.00000000E+0      0.00000000E+0      0.00000000E+0
 |
 |***************************************************************************
-|                        SUBMODEL 150ohm_ODT    
+|                        SUBMODEL 150ohm_ODT
 |***************************************************************************
 |
 [Submodel]  150ohm_ODT

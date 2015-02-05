@@ -575,4 +575,3 @@ class Ibis_Parser(_Builder):
 				self.device = device
 			else:
 				raise RuntimeError("Can not find %s in the IBIS File" % device)
-

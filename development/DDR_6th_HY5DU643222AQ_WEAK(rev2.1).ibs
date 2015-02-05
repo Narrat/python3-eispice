@@ -6,18 +6,18 @@
 [IBIS ver]       2.1
 [File name]      2mx32.ibs
 [File Rev]       1.0
-[Date]           10/29/2000 
-[Source]         
-[Notes]          
-[Disclaimer]     
-[Copyright]      
+[Date]           10/29/2000
+[Source]
+[Notes]
+[Disclaimer]
+[Copyright]
 |
 |************************************************************************
-|                       Component 2mx32_DDR_SDRAM 
+|                       Component 2mx32_DDR_SDRAM
 |************************************************************************
 |
-[Component]      2mx32_DDR_SDRAM 
-[Manufacturer]   HEI_Memory_R&D 
+[Component]      2mx32_DDR_SDRAM
+[Manufacturer]   HEI_Memory_R&D
 [Package]
 | variable       typ                 min                 max
 R_pkg            150.00m             80.00m              200.00m
@@ -705,6 +705,6 @@ C_fixture = 50.00pF
 |
 | End [Model] I/O
 |
-| End [Component] 2mx32_DDR_SDRAM 
+| End [Component] 2mx32_DDR_SDRAM
 |
 [End]

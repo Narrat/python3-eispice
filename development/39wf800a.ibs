@@ -1,21 +1,21 @@
 |--------------------------------------------------------------------------
 [IBIS Ver]      2.1
 | SST39WF800A 48-ball TFBGA 8M Concurrent flash VCC 1.65->1.95v
-[File name]     39wf800a.ibs   
+[File name]     39wf800a.ibs
 [File Rev]      1.0
 [Date]       Wed Jan 10 13:21:42 PST 2007
 [Source]     Spice for driver outputs, measured for protection devices
 [Notes]      none
-[Disclaimer]    This information is for modeling purposes only, and is not 
+[Disclaimer]    This information is for modeling purposes only, and is not
           guaranteed and will vary by component
 [Copyright]     Copyright SST Jan 2007 all rights reserved
-[Component]     SST39WF800A-xx-xx-B3Kx | 48-ball TFBGA device 
+[Component]     SST39WF800A-xx-xx-B3Kx | 48-ball TFBGA device
 [Manufacturer]  Silicon Storage Technology, SST
 [Package]
 | variable   typ     min     max
-R_pkg       182.6m  155.9m  209.2m     
+R_pkg       182.6m  155.9m  209.2m
 L_pkg       3.1nH   2.18nH  4.01nH
-C_pkg       0.51pF  0.27pF  0.74pF 
+C_pkg       0.51pF  0.27pF  0.74pF
 
 [Pin]   signal_name  model_name
 A1      A3           IN_SST
@@ -68,7 +68,7 @@ H5      DQ6          IO_SST
 H6      GND          GND
 
 |------------------------------------------------------
-| standard input with p & n diodes  
+| standard input with p & n diodes
 |------------------------------------------------------
 [Model] IN_SST
 Model_type Input
@@ -121,7 +121,7 @@ C_comp   2.0pF   NA      NA
 -0.00v         0.000m       NA       NA
  1.00v         0.000m       NA       NA
  1.80v         0.000m       NA       NA
- 
+
 [POWER_clamp]
 |voltage     I(typ)        I(min)    I(max)
 1.80v        0.000m        NA        NA
@@ -222,7 +222,7 @@ C_comp  5.0pF   3.0pF   7.0pF
       3.00V       49.17m       36.81m       68.27m
       3.30V       53.10m       40.66m       72.47m
       3.60V       57.56m       44.97m       77.32m
-      
+
 
 [Pullup]
 |    Voltage     I(typ)       I(min)       I(max)
@@ -306,12 +306,12 @@ C_comp  5.0pF   3.0pF   7.0pF
      -1.55V       39.27m       37.11m       42.41m
      -1.60V       40.53m       38.19m       43.93m
      -1.80V       45.44m       42.47m       49.88m
-     
+
 
 
 [GND_clamp]
 |
-|Voltage     I(typ)   I(min)  I(max)   
+|Voltage     I(typ)   I(min)  I(max)
 
  -1.80v     -529.13m    NA     NA
  -1.75v     -497.01m    NA     NA
@@ -351,7 +351,7 @@ C_comp  5.0pF   3.0pF   7.0pF
   1.00v      0.000m     NA     NA
   1.50v      0.000m     NA     NA
   1.80v      0.000m     NA     NA
- 
+
 [POWER_clamp]
 |voltage    I(typ)       I(min)  I(max)
   1.80v     0.000m       NA      NA

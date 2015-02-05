@@ -3,11 +3,11 @@
 |==============================================================================|
 |                 This file is an IBIS representation of the                   |
 |                               analog devices                                 |
-|                               ad9289 all speed grades 
-|           
-|        
+|                               ad9289 all speed grades
+|
+|
 |==============================================================================|
-|           
+|
 |*************************************************************
 |
 |*********************************************************************
@@ -17,14 +17,14 @@
 [File Rev] 3.1
 [Source] Measured and created by ADI
 [Date] 10/2004
-[Notes] 
+[Notes]
 |*********************************
-[Disclaimer]    
+[Disclaimer]
 |              This IBIS model is provided "AS IS, WHERE IS, AND WITH NO
 |              WARRANTY OF ANY KIND EITHER EXPRESSED OR IMPLIED, INCLUDING
 |              BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MECHANTABILITY
 |              AND FITNESS FOR A PARTICULAR PURPOSE."
-|              
+|
 |              In no event will ADI be liable for special, collateral,
 |              incidental, or consequential damages in connection with or
 |              arising out of the use of this IBIS model. ADI reserves the
@@ -102,7 +102,7 @@ H6      VIN-C           NC      .138    2.77n   0.67p
 F8      VIN-D           NC      .106    1.87n   0.40p
 H5      VREF            NC      .114    1.84n   0.35p
 |
-[Model] LVDS1  
+[Model] LVDS1
 Model_type Output
 |
 Vref=1.20
@@ -118,8 +118,8 @@ C_comp 3.00000pF 3.00000pF 3.00000pF
 [Pulldown Reference]    0.00000V      NA    NA
 [GND Clamp Reference]   0.00000V      NA    NA
 |
-[Temperature Range] 25       NA    NA 
-|                                     
+[Temperature Range] 25       NA    NA
+|
 [GND Clamp]
 |
 -3.60000V   -853.207mA        NA    NA
@@ -155,9 +155,9 @@ C_comp 3.00000pF 3.00000pF 3.00000pF
 6.00000V   0.00000A           NA    NA
 6.60000V   0.00000A           NA    NA
 7.20000V   0.00000A           NA    NA
-|                             
-[Pulldown]                    
-|                             
+|
+[Pulldown]
+|
 -3.60000V   -46.9785mA        NA    NA
 -3.30000V   -43.0912mA        NA    NA
 -3.00000V   -39.2039mA        NA    NA
@@ -231,9 +231,9 @@ C_comp 3.00000pF 3.00000pF 3.00000pF
 6.00000V   6.64504mA          NA    NA
 6.60000V   7.18126mA          NA    NA
 7.20000V   7.71748mA          NA    NA
-|                             
-[Pullup]                      
-|                             
+|
+[Pullup]
+|
 6.90000V   -91.5433mA         NA    NA
 6.60000V   -86.5606mA         NA    NA
 6.30000V   -81.5780mA         NA    NA
@@ -297,9 +297,9 @@ C_comp 3.00000pF 3.00000pF 3.00000pF
 -2.70000V   839.939uA         NA    NA
 -3.30000V   926.984uA         NA    NA
 -3.90000V   1.01403mA         NA    NA
-|                             
-[POWER Clamp]                 
-|                             
+|
+[POWER Clamp]
+|
 6.90000V   0.00000A           NA    NA
 6.60000V   0.00000A           NA    NA
 6.30000V   0.00000A           NA    NA
@@ -339,12 +339,12 @@ C_comp 3.00000pF 3.00000pF 3.00000pF
 -2.70000V   392.932mA         NA    NA
 -3.30000V   518.554mA         NA    NA
 -3.90000V   644.176mA         NA    NA
-|                             
-|                             
-|                             
-[Falling Waveform]            
-R_fixture = 50.0000           
-V_fixture = 1.20000           
+|
+|
+|
+[Falling Waveform]
+R_fixture = 50.0000
+V_fixture = 1.20000
 0.00000s 1.45619V             NA    NA
 222.000ps 1.45349V            NA    NA
 338.000ps 1.45209V            NA    NA
@@ -365,10 +365,10 @@ V_fixture = 1.20000
 1.47000ns 1.03392V            NA    NA
 1.59000ns 1.02468V            NA    NA
 1.99800ns 1.01742V            NA    NA
-|                             
-[Rising Waveform]             
-R_fixture = 50.0000           
-V_fixture = 1.20000           
+|
+[Rising Waveform]
+R_fixture = 50.0000
+V_fixture = 1.20000
 0.00000s 1.01742V             NA    NA
 236.000ps 1.01563V            NA    NA
 436.000ps 1.01410V            NA    NA
@@ -389,15 +389,15 @@ V_fixture = 1.20000
 1.31400ns 1.44984V            NA    NA
 1.51400ns 1.45170V            NA    NA
 1.99800ns 1.45619V            NA    NA
-|                             
-[Ramp]                        
-| variable typ min max        
+|
+[Ramp]
+| variable typ min max
 dV/dt_r 263.260m/237.531p     NA    NA
 dV/dt_f 263.260m/205.202p     NA    NA
-R_load = 50.0000Ohms                             
-|                             
-|                             
-[Model] IN1                   
+R_load = 50.0000Ohms
+|
+|
+[Model] IN1
 Model_type Input
 Vinl = 800.000mV
 Vinh = 2.00000V
@@ -408,12 +408,12 @@ C_comp 2.00000pF 2.00000pF 2.00000pF
 [POWER Clamp Reference] 3.00000V  NA    NA
 [GND Clamp Reference]   0.00000V  NA    NA
 |
-[Temperature Range] 25       NA    NA 
-|                                 
-[GND Clamp]                       
-|                                 
--3.30000V   -755.826mA        NA    NA    
--1.04290V   -64.3550mA        NA    NA    
+[Temperature Range] 25       NA    NA
+|
+[GND Clamp]
+|
+-3.30000V   -755.826mA        NA    NA
+-1.04290V   -64.3550mA        NA    NA
 -901.340mV   -30.1950mA       NA    NA
 -901.330mV   -30.1934mA       NA    NA
 -840.970mV   -20.7849mA       NA    NA
@@ -437,9 +437,9 @@ C_comp 2.00000pF 2.00000pF 2.00000pF
 234.800uV    0.00000A         NA    NA
 3.25775V     0.00000A         NA    NA
 6.60000V     0.00000A         NA    NA
-|                             
-[POWER Clamp]                 
-|                             
+|
+[POWER Clamp]
+|
 6.60000V     0.00000A         NA    NA
 -59.6000mV   0.00000A         NA    NA
 -65.7334mV   0.00000A         NA    NA
@@ -472,9 +472,7 @@ C_comp 2.00000pF 2.00000pF 2.00000pF
 -1.16030V   64.9238mA         NA    NA
 -1.28220V   88.2554mA         NA    NA
 -3.30000V   474.461mA         NA    NA
-                    
-|                             
-|                             
-[End]        
-                           
 
+|
+|
+[End]

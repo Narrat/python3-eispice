@@ -91,7 +91,7 @@ class Ibis(Ibis_Parser):
 		device -- (optional) name of default device, default = first device
 		"""
 		if device != None:
-			device = device.lower()			
+			device = device.lower()
 		Ibis_Parser.__init__(self, filename, device)
 
 	def __getitem__(self, pin):

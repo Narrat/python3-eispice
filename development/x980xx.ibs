@@ -1,30 +1,30 @@
 |*******************************************************************************
 |
-[IBIS Ver]     2.1                
+[IBIS Ver]     2.1
 [File name]    x980xx.ibs
 [File Rev]     1.1
 [Date]         02/10/2005
-[Source]       This IBIS model is derived from a combination of bench data 
+[Source]       This IBIS model is derived from a combination of bench data
 |              and package datasheet data.
 [Disclaimer]   This IBIS model is provided "AS IS, WHERE IS, AND WITH NO
 |              WARRANTY OF ANY KIND EITHER EXPRESSED OR IMPLIED, INCLUDING
 |              BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MECHANTABILITY
 |              AND FITNESS FOR A PARTICULAR PURPOSE."
-|              
+|
 |              In no event will Intersil be liable for special, collateral,
 |              incidental, or consequential damages in connection with or
 |              arising out of the use of this IBIS model. Intersil reserves the
 |              right to make changes to the products and IBIS models without
 |              prior notice.
-|              
+|
 |
 |*******************************************************************************
 |
 [Component]    X980xx
 [Manufacturer] Intersil, Inc.
-[Package] 
+[Package]
 |               typ             min             max
-R_pkg           170m            147m            193m       
+R_pkg           170m            147m            193m
 L_pkg           8.73nH          7.02nH          10.43nH
 C_pkg           1.11pF          0.85pF          1.37pF
 |
@@ -167,17 +167,17 @@ C_pkg           1.11pF          0.85pF          1.37pF
 [Model]       DATAOUT
 Model_type    Output
 
-C_comp               3.481pF  3.352pF  3.612pF   
-   
+C_comp               3.481pF  3.352pF  3.612pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
 [Ramp]
-dV/dt_r     1.950/1.585n     1.880/0.778n     1.870/0.540n     
-dV/dt_f     1.950/1.210n     1.880/1.039n     1.850/0.707n     
+dV/dt_r     1.950/1.585n     1.880/0.778n     1.870/0.540n
+dV/dt_f     1.950/1.210n     1.880/1.039n     1.850/0.707n
 
-[Pulldown]               
+[Pulldown]
 |V        I(typ)     I(min)     I(max)
 -3.30     -1.144     -1.032     -1.176
 -3.20     -1.070     -0.970     -1.099
@@ -280,7 +280,7 @@ dV/dt_f     1.950/1.210n     1.880/1.039n     1.850/0.707n
 6.50     0.120     0.140     0.124
 6.60     0.124     0.144     0.128
 
-[Pullup]               
+[Pullup]
 |V       I(typ)     I(min)     I(max)
 6.60     -1.426     -1.661     -1.120
 6.50     -1.328     -1.560     -1.033
@@ -383,7 +383,7 @@ dV/dt_f     1.950/1.210n     1.880/1.039n     1.850/0.707n
 -3.20     0.146     0.131     0.096
 -3.30     0.150     0.134     0.098
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.979     -1.157     -1.154
 -3.20     -0.928     -1.093     -1.087
@@ -486,7 +486,7 @@ dV/dt_f     1.950/1.210n     1.880/1.039n     1.850/0.707n
 6.50     0.000     0.000     0.000
 6.60     0.000     0.000     0.000
 
-[Power_Clamp]               
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.979     -1.359     -0.957
 6.50     -0.928     -1.290     -0.896
@@ -588,15 +588,15 @@ dV/dt_f     1.950/1.210n     1.880/1.039n     1.850/0.707n
 -3.10     0.000     0.000     0.000
 -3.20     0.000     0.000     0.000
 -3.30     0.000     0.000     0.000
- 
+
 |*******************************************************************************
 |                               DATACLK MODEL
 |*******************************************************************************
 [Model]       DATACLK
 Model_type    Output
 
-C_comp               3.384pF  3.254pF  3.516pF   
-   
+C_comp               3.384pF  3.254pF  3.516pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
@@ -605,7 +605,7 @@ C_comp               3.384pF  3.254pF  3.516pF
 dV/dt_r     1.930/0.973n     1.850/0.935n     2.100/0.600n
 dV/dt_f     1.930/0.984n     1.850/0.881n     2.100/0.560n
 
-[Pulldown]               
+[Pulldown]
 |V        I(typ)     I(min)     I(max)
 -3.30     -1.096     -0.943     -1.164
 -3.20     -1.020     -0.883     -1.081
@@ -707,8 +707,8 @@ dV/dt_f     1.930/0.984n     1.850/0.881n     2.100/0.560n
 6.40     0.346     0.428     0.199
 6.50     0.366     0.451     0.209
 6.60     0.386     0.475     0.219
-                                                       
-[Pullup]                                                       
+
+[Pullup]
 |V       I(typ)     I(min)     I(max)
 6.60     -1.009     -0.953     -0.793
 6.50     -0.942     -0.905     -0.736
@@ -811,7 +811,7 @@ dV/dt_f     1.930/0.984n     1.850/0.881n     2.100/0.560n
 -3.20     0.367     0.435     0.640
 -3.30     0.383     0.465     0.698
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.751     -0.767     -0.642
 -3.20     -0.715     -0.730     -0.616
@@ -914,7 +914,7 @@ dV/dt_f     1.930/0.984n     1.850/0.881n     2.100/0.560n
 6.50     0.000     0.000     0.000
 6.60     0.000     0.000     0.000
 
-[Power_Clamp]               
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.751     -0.881     -0.563
 6.50     -0.715     -0.843     -0.537
@@ -1020,17 +1020,17 @@ dV/dt_f     1.930/0.984n     1.850/0.881n     2.100/0.560n
 |*******************************************************************************
 |                               RESET MODEL
 |*******************************************************************************
-[Model]       RESET 
+[Model]       RESET
 Model_type    Input
 Vinl = 0.8Vc
 Vinh = 2.5V
-C_comp               3.375pF  3.249pF  3.504pF   
-   
+C_comp               3.375pF  3.249pF  3.504pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.938     -0.761     -0.805
 -3.20     -0.892     -0.732     -0.773
@@ -1133,7 +1133,7 @@ C_comp               3.375pF  3.249pF  3.504pF
 6.50     0.000     0.000     0.000
 6.60     0.000     0.000     0.000
 
-[Power_Clamp]               
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.938     -0.848     -0.708
 6.50     -0.892     -0.819     -0.675
@@ -1239,17 +1239,17 @@ C_comp               3.375pF  3.249pF  3.504pF
 |*******************************************************************************
 |                               RGBIN MODEL
 |*******************************************************************************
-[Model]       RGBIN 
+[Model]       RGBIN
 Model_type    Input
 Vinl = 0.8Vc
 Vinh = 2.5V
-C_comp               3pF      3pF      3pF   
-   
+C_comp               3pF      3pF      3pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
-[GND_Clamp]               
+[GND_Clamp]
 |V     I(typ)     I(min)     i(max)
 -3.30     -0.031     -0.032     -0.030
 -3.20     -0.030     -0.031     -0.029
@@ -1352,7 +1352,7 @@ C_comp               3pF      3pF      3pF
 6.50     0.029     0.034     0.025
 6.60     0.031     0.035     0.026
 
-[Power_Clamp]               
+[Power_Clamp]
 |V        I(typ)     I(min)     i(max)
 |V       I(typ)     I(min)     i(max)
 6.60     -0.031     -0.036     -0.026
@@ -1463,13 +1463,13 @@ C_comp               3pF      3pF      3pF
 Model_type    Input
 Vinl = 0.8Vc
 Vinh = 2.5V
-C_comp               3pF      3pF      3pF   
-   
+C_comp               3pF      3pF      3pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
-[GND_Clamp]     
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.896     -0.853     -0.937
 -3.20     -0.846     -0.808     -0.883
@@ -1572,7 +1572,7 @@ C_comp               3pF      3pF      3pF
 6.50     0.695     0.765     0.603
 6.60     0.737     0.804     0.645
 
-[Power_Clamp]     
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.896     -0.995     -0.778
 6.50     -0.846     -0.947     -0.728
@@ -1682,13 +1682,13 @@ C_comp               3pF      3pF      3pF
 Model_type    Input
 Vinl = 0.8Vc
 Vinh = 2.5V
-C_comp               3.374pF  3.248pF  3.503pF   
-   
+C_comp               3.374pF  3.248pF  3.503pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -1.004     -1.038     -0.715
 -3.20     -0.948     -0.981     -0.682
@@ -1791,7 +1791,7 @@ C_comp               3.374pF  3.248pF  3.503pF
 6.50     0.000     0.000     0.000
 6.60     0.000     0.000     0.000
 
-[Power_Clamp]               
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -1.004     -1.218     -0.715
 6.50     -0.948     -1.156     -0.682
@@ -1901,13 +1901,13 @@ C_comp               3.374pF  3.248pF  3.503pF
 Model_type    Input
 Vinl = 0.8Vc
 Vinh = 2.5V
-C_comp               3.355pF  3.227pF  3.485pF   
-   
+C_comp               3.355pF  3.227pF  3.485pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.834     -0.785     -0.727
 -3.20     -0.792     -0.746     -0.691
@@ -2010,7 +2010,7 @@ C_comp               3.355pF  3.227pF  3.485pF
 6.50     0.005     0.005     0.005
 6.60     0.005     0.006     0.005
 
-[Power_Clamp]               
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.834     -0.910     -0.620
 6.50     -0.792     -0.868     -0.586
@@ -2120,13 +2120,13 @@ C_comp               3.355pF  3.227pF  3.485pF
 Model_type    Input
 Vinl = 0.8Vc
 Vinh = 2.5V
-C_comp               3.355pF  3.227pF  3.485pF   
-   
+C_comp               3.355pF  3.227pF  3.485pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.863     -0.919     -0.777
 -3.20     -0.823     -0.874     -0.746
@@ -2229,7 +2229,7 @@ C_comp               3.355pF  3.227pF  3.485pF
 6.50     0.000     0.000     0.000
 6.60     0.000     0.000     0.000
 
-[Power_Clamp]               
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.863     -1.058     -0.684
 6.50     -0.823     -1.011     -0.653
@@ -2339,13 +2339,13 @@ C_comp               3.355pF  3.227pF  3.485pF
 Model_type    Input
 Vinl = 0.8Vc
 Vinh = 2.5V
-C_comp               3.355pF  3.227pF  3.485pF   
-   
+C_comp               3.355pF  3.227pF  3.485pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.564     -0.648     -0.481
 -3.20     -0.536     -0.613     -0.459
@@ -2448,7 +2448,7 @@ C_comp               3.355pF  3.227pF  3.485pF
 6.50     0.473     0.562     0.384
 6.60     0.499     0.588     0.409
 
-[Power_Clamp]               
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.564     -0.757     -0.416
 6.50     -0.536     -0.720     -0.394
@@ -2557,18 +2557,18 @@ C_comp               3.355pF  3.227pF  3.485pF
 [Model]       SYNCOUT
 Model_type    Output
 
-C_comp               3.219pF  3.093pF  3.349pF   
-   
+C_comp               3.219pF  3.093pF  3.349pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
 [Ramp]
-dV/dt_r     1.970/1.185n     1.980/0.967n     2.060/0.872n     
-dV/dt_f     1.970/1.668n     2.010/1.039n     2.070/1.162n     
+dV/dt_r     1.970/1.185n     1.980/0.967n     2.060/0.872n
+dV/dt_f     1.970/1.668n     2.010/1.039n     2.070/1.162n
 
 
-[Pulldown]               
+[Pulldown]
 |V        I(typ)     I(min)     I(max)
 -3.30     -1.331     -1.306     -1.227
 -3.20     -1.243     -1.221     -1.143
@@ -2671,7 +2671,7 @@ dV/dt_f     1.970/1.668n     2.010/1.039n     2.070/1.162n
 6.50     1.245     1.407     0.791
 6.60     1.338     1.497     0.855
 
-[Pullup]               
+[Pullup]
 |V       I(typ)     I(min)     I(max)
 6.60     -1.221     -1.411     -0.899
 6.50     -1.145     -1.333     -0.834
@@ -2774,7 +2774,7 @@ dV/dt_f     1.970/1.668n     2.010/1.039n     2.070/1.162n
 -3.20     1.104     0.935     0.934
 -3.30     1.183     0.996     1.002
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -1.331     -1.306     -1.227
 -3.20     -1.243     -1.221     -1.143
@@ -2877,7 +2877,7 @@ dV/dt_f     1.970/1.668n     2.010/1.039n     2.070/1.162n
 6.50     1.245     1.407     0.791
 6.60     1.338     1.497     0.855
 
-[Power_Clamp]               
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -1.221     -1.411     -0.899
 6.50     -1.145     -1.333     -0.834
@@ -2986,8 +2986,8 @@ dV/dt_f     1.970/1.668n     2.010/1.039n     2.070/1.162n
 [Model]       XCLKOUT
 Model_type    Output
 
-C_comp               3.218pF  3.091pF  3.347pF   
-   
+C_comp               3.218pF  3.091pF  3.347pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
@@ -2997,7 +2997,7 @@ dV/dt_r     1.980/1.380n      1.800/1.670n     2.160/1.107n
 dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 
 
-[Pulldown]               
+[Pulldown]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.699     -0.665     -0.600
 -3.20     -0.665     -0.632     -0.574
@@ -3100,7 +3100,7 @@ dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 6.50     0.731     0.645     0.548
 6.60     0.781     0.676     0.588
 
-[Pullup]               
+[Pullup]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.781     -0.676     -0.588
 6.50     -0.731     -0.645     -0.548
@@ -3203,7 +3203,7 @@ dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 -3.20     0.665     0.632     0.574
 -3.30     0.699     0.665     0.600
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.699     -0.665     -0.600
 -3.20     -0.665     -0.632     -0.574
@@ -3306,7 +3306,7 @@ dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 6.50     0.731     0.645     0.548
 6.60     0.781     0.676     0.588
 
-[Power_Clamp]      
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.781     -0.676     -0.588
 6.50     -0.731     -0.645     -0.548
@@ -3408,7 +3408,7 @@ dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 -3.10     0.631     0.600     0.548
 -3.20     0.665     0.632     0.574
 -3.30     0.699     0.665     0.600
-        
+
 |
 |*******************************************************************************
 |                               SDA MODEL
@@ -3417,21 +3417,21 @@ dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 Model_type    I/O
 Vinl = 0.8Vc
 Vinh = 2.5V
-C_comp               3.478pF  3.35pF   3.61pF   
-   
+C_comp               3.478pF  3.35pF   3.61pF
+
 |                    typ      min      max
 [Voltage Range]      3.3      3        3.6
 [Temperature Range]  25       85      -40
 
-[Ramp]            
-| DIGOUT simulated   with 500ps    20-80% risetime   signal input to buffer   
-| simulated with   500 ohm resistor         
-| c_comp included   in simulation   (c_comp=3pf)      
-|           (typ)             (min)            (max)   
+[Ramp]
+| DIGOUT simulated   with 500ps    20-80% risetime   signal input to buffer
+| simulated with   500 ohm resistor
+| c_comp included   in simulation   (c_comp=3pf)
+|           (typ)             (min)            (max)
 dV/dt_r     1.980/56.000n     1.800/127.000n   2.160/61.000n
 dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 
-[Pulldown]               
+[Pulldown]
 |V        I(typ)     I(min)     I(max)
 -3.30     -1.170     -0.951     -0.866
 -3.20     -1.100     -0.900     -0.822
@@ -3534,7 +3534,7 @@ dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 6.50     0.000     0.000     0.000
 6.60     0.000     0.000     0.000
 
-[Pullup]               
+[Pullup]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.838     -0.909     -0.710
 6.50     -0.795     -0.870     -0.671
@@ -3637,7 +3637,7 @@ dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 -3.20     0.000     0.000     0.000
 -3.30     0.000     0.000     0.000
 
-[GND_Clamp]               
+[GND_Clamp]
 |V        I(typ)     I(min)     I(max)
 -3.30     -0.838     -0.793     -0.829
 -3.20     -0.795     -0.755     -0.788
@@ -3740,7 +3740,7 @@ dV/dt_f     1.980/1.380n      1.800/1.670n     2.160/1.107n
 6.50     0.000     0.000     0.000
 6.60     0.000     0.000     0.000
 
-[Power_Clamp]               
+[Power_Clamp]
 |V       I(typ)     I(min)     I(max)
 6.60     -0.838     -0.909     -0.710
 6.50     -0.795     -0.870     -0.671

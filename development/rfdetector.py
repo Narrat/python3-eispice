@@ -15,7 +15,7 @@ class Detector(Subckt):
         self.D = SMS7630(0,self.node(1))
         self.L = L(self.node(1),video_out,"100n")
         self.Cv = C(video_out,0,"1000p")
-    
+
 
 if __name__=="__main__":
 
@@ -27,6 +27,3 @@ if __name__=="__main__":
 
     cir.tran("1n","100ns")
     plot(cir)
-
-    
-

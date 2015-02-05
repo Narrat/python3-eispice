@@ -18,3 +18,4 @@ libs/simulator/math/*.o
 libs/superlu/SRC/*.o
 libs/superlu/*.a
 module/sim*.so
+module/__pycache__

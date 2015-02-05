@@ -65,7 +65,7 @@ class SMS1546(D):
 
     >>> del(c)
 
-    Reverse current at 2V 
+    Reverse current at 2V
     >>> c = Circuit()
     >>> c.D = SMS1546(1,0)
     >>> c.V = V(1,0,-2)
@@ -96,7 +96,7 @@ class SMS1546(D):
 
 class SMS7630(D):
     """
-    Forward current at 270 mV 
+    Forward current at 270 mV
     >>> c = Circuit()
     >>> c.D = SMS7630(1,0)
     >>> c.V = V(1,0,270e-3)
@@ -106,7 +106,7 @@ class SMS7630(D):
 
     >>> del(c)
 
-    Reverse current at 2V 
+    Reverse current at 2V
     >>> c = Circuit()
     >>> c.D = SMS7630(1,0)
     >>> c.V = V(1,0,-2)
@@ -137,10 +137,10 @@ class SMS7630(D):
                 VJ = 0.34,
                 )
 
-        
+
 class SMS3922(D):
     """
-    Forward current at 270 mV 
+    Forward current at 270 mV
     >>> c = Circuit()
     >>> c.D = SMS3922(1,0)
     >>> c.V = V(1,0,270e-3)
@@ -150,7 +150,7 @@ class SMS3922(D):
 
     >>> del(c)
 
-    Reverse current at 2V 
+    Reverse current at 2V
     >>> c = Circuit()
     >>> c.D = SMS3922(1,0)
     >>> c.V = V(1,0,-2)
@@ -181,7 +181,7 @@ class SMS3922(D):
 
 class SMS3923(D):
     """
-    Forward current at 270 mV 
+    Forward current at 270 mV
     >>> c = Circuit()
     >>> c.D = SMS3923(1,0)
     >>> c.V = V(1,0,270e-3)
@@ -191,7 +191,7 @@ class SMS3923(D):
 
     >>> del(c)
 
-    Reverse current at 2V 
+    Reverse current at 2V
     >>> c = Circuit()
     >>> c.D = SMS3923(1,0)
     >>> c.V = V(1,0,-2)
@@ -223,7 +223,7 @@ class SMS3923(D):
 
 class SMS3924(D):
     """
-    Forward current at 270 mV 
+    Forward current at 270 mV
     >>> c = Circuit()
     >>> c.D = SMS3924(1,0)
     >>> c.V = V(1,0,270e-3)
@@ -233,7 +233,7 @@ class SMS3924(D):
 
     >>> del(c)
 
-    Reverse current at 2V 
+    Reverse current at 2V
     >>> c = Circuit()
     >>> c.D = SMS3924(1,0)
     >>> c.V = V(1,0,-2)
@@ -264,10 +264,9 @@ class SMS3924(D):
 
 def _test():
     import doctest
-    # doctest.testmod(verbose=True)   
+    # doctest.testmod(verbose=True)
     doctest.testmod()        # use -v at the command line if you want to see something
 
-if __name__=="__main__":        
+if __name__=="__main__":
 
     _test()
-

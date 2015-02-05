@@ -54,14 +54,14 @@ changes without notice to any product herein to improve
 reliability, function, or design. Fairchild does not convey
 any license under patent rights or any other intellectual
 property rights, including those of third parties.
- 
+
 Fairchild is not obligated to provide maintenance or support
 for the licensed IBIS model.
- 
+
 ContF Fairchild at ATTN:LOGIC APPLICATIONS/IBIS MODEF.
 333 Western Avenue, M/S 10-26, South Portland, ME 04106
 IBIS Open Forum disclaims all warranties. See
-DISCLAIM.TXT in vhdl.org:/pub/IBIS/modeF for 
+DISCLAIM.TXT in vhdl.org:/pub/IBIS/modeF for
 the full disclaimer.
 |
 [Copyright]
@@ -78,21 +78,21 @@ R_pkg               101m                81m                 131m
 L_pkg               3.37n               2.56n               3.89n
 C_pkg               0.08p               0.06p               0.10p
 |
-[Pin] signal_name          model_name           R_pin     L_pin     C_pin     
-1     a0                   data_i               101m      3.89n     0.15p    
-2     b0                   data_i               81m       3.37n     0.08p    
-3     o0                   data_o               81m       2.56n     0.07p    
-4     a1                   data_i               81m       2.57n     0.07p    
-5     b1                   data_i               81m       2.56n     0.08p    
-6     o1                   data_o               101m      3.37n     0.10p    
-7     gnd                  GND                  101m      3.88n     0.10p    
-8     o3                   data_o               101m      3.89n     0.10p    
-9     b3                   data_i               101m      3.37n     0.10p    
-10    a3                   data_i               81m       2.56n     0.08p    
-11    o2                   data_o               81m       2.57n     0.06p    
-12    b2                   data_i               81m       2.56n     0.08p    
-13    a2                   data_i               81m       3.37n     0.10p    
-14    vcc                  POWER                131m      3.88n     0.10p    
+[Pin] signal_name          model_name           R_pin     L_pin     C_pin
+1     a0                   data_i               101m      3.89n     0.15p
+2     b0                   data_i               81m       3.37n     0.08p
+3     o0                   data_o               81m       2.56n     0.07p
+4     a1                   data_i               81m       2.57n     0.07p
+5     b1                   data_i               81m       2.56n     0.08p
+6     o1                   data_o               101m      3.37n     0.10p
+7     gnd                  GND                  101m      3.88n     0.10p
+8     o3                   data_o               101m      3.89n     0.10p
+9     b3                   data_i               101m      3.37n     0.10p
+10    a3                   data_i               81m       2.56n     0.08p
+11    o2                   data_o               81m       2.57n     0.06p
+12    b2                   data_i               81m       2.56n     0.08p
+13    a2                   data_i               81m       3.37n     0.10p
+14    vcc                  POWER                131m      3.88n     0.10p
 |
 [Model]                       data_i
 Model_type Input
@@ -428,8 +428,8 @@ C_comp              7p                  NA                  NA
     6.600000E+0    1.363148E-1    8.731930E-2    2.018143E-1
 |
 [Ramp]
-dV/dt_r    1.473E+0/4.689E-10     1.234E+0/5.823E-10     1.702E+0/3.712E-10  
-dV/dt_f    1.584E+0/3.803E-10     1.318E+0/5.321E-10     1.810E+0/2.252E-10  
+dV/dt_r    1.473E+0/4.689E-10     1.234E+0/5.823E-10     1.702E+0/3.712E-10
+dV/dt_f    1.584E+0/3.803E-10     1.318E+0/5.321E-10     1.810E+0/2.252E-10
 |
 [Falling Waveform]
 R_fixture=50

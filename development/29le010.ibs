@@ -1,19 +1,19 @@
 |--------------------------------------------------------------------------
 [IBIS Ver]      2.1
 | sst29le010 32 pin DIP 1meg bit page-write flash VCC 3.0->3.6v
-[File name]     29le010.ibs   
+[File name]     29le010.ibs
 [File Rev]      1.0
 [Date]          Tue Jan  7 2003
 [Source]        Spice for driver outputs, measured for protection devices
 [Notes]         none
-[Disclaimer]    This information is for modeling purposes only, and is not 
+[Disclaimer]    This information is for modeling purposes only, and is not
                 guaranteed and will vary by coponent
 [Copyright]     Copyright SST Wed Jan 7 2003, all rights reserved
 [Component]     SST29LE010-xxx-xx-PH | DIP 32 pin
 [Manufacturer]  Silicon Storage Technology, SST
 [Package]
 | variable      typ     min     max
-R_pkg           60m     58m     62m     
+R_pkg           60m     58m     62m
 L_pkg        10.0nH   5.0nH    15.0nH
 C_pkg         2.0pF   1.0pF     3.0pF
 [Pin]   signal_name     model_name
@@ -149,8 +149,8 @@ C_comp  5.0pF   3.0pF   7.0pF
 |
 [Ramp]
 |variable       typ             min             max
-dV/dt_r         0.61/1.0n       0.39/1.6n       1.26/0.6n     
-dV/dt_f         1.26/2.5n       1.22/4.7n       1.56/1.6n     
+dV/dt_r         0.61/1.0n       0.39/1.6n       1.26/0.6n
+dV/dt_f         1.26/2.5n       1.22/4.7n       1.56/1.6n
 [Model] IN_SST
 Model_type Input
 Vinl = 0.8v

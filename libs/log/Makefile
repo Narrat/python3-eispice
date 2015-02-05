@@ -2,8 +2,8 @@
 INC_PREFIX = ../../include
 
 # Quiet (set to @ for a quite compile)
-Q	?= 
-#Q	?= 
+Q	?=
+#Q	?=
 
 INC = log.h
 
@@ -17,4 +17,3 @@ $(INC_PREFIX)/$(INC):$(INC)
 	$(Q)cp $(INC) $(INC_PREFIX)
 
 install: $(INC_PREFIX)/$(INC)
-	

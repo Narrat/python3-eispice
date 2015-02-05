@@ -1,7 +1,7 @@
 |##########################################################################
 |                     TEXAS INSTRUMENTS INCORPORATED
 |                         IBIS Model of CDCV304
-|                           3.3-V Clock DRIVER 
+|                           3.3-V Clock DRIVER
 |                            8-pin (PW) Package
 |##########################################################################
 |
@@ -16,41 +16,41 @@
 |               - File created by CDC Applications, HSCC.
 |
 |**************************************************************************
-[Disclaimer]    Property of Texas Instruments Incorporated.  Unauthorized 
+[Disclaimer]    Property of Texas Instruments Incorporated.  Unauthorized
                 reproduction and/or distribution is strictly prohibited.
 
                 This product is protected under copyright law.
                 Created 2000, (C) Copyright 2000, Texas Instruments Inc.,
                 All Rights Reserved
 
-                UNLESS THERE IS A SIGNED, WRITTEN AGREEMENT TO THE 
-                CONTRARY, TEXAS INSTRUMENTS ("TI") IS PROVIDING THE IBIS 
-                MODELS "AS IS" AND WITHOUT ANY WARRANTY, EXPRESSED OR 
+                UNLESS THERE IS A SIGNED, WRITTEN AGREEMENT TO THE
+                CONTRARY, TEXAS INSTRUMENTS ("TI") IS PROVIDING THE IBIS
+                MODELS "AS IS" AND WITHOUT ANY WARRANTY, EXPRESSED OR
                 IMPLIED.  TI assumes no liability for:
-                 1) the accuracy of the IBIS models provided to your 
+                 1) the accuracy of the IBIS models provided to your
                     company;
-                 2) the proper functioning of these IBIS models in your 
+                 2) the proper functioning of these IBIS models in your
                     design or for any resulting applications; or
-                 3) infringement of patents, copyrights or intellectual 
-                    property rights resulting from your use of these IBIS 
+                 3) infringement of patents, copyrights or intellectual
+                    property rights resulting from your use of these IBIS
                     models.
 
                 TI provides IBIS Models as a service to our customers.
-                You and your company shall not distribute, sell or give 
-                these models to anyone else without prior written 
+                You and your company shall not distribute, sell or give
+                these models to anyone else without prior written
                 permission from TI.
 
-                TI reserves the right to make changes to our products or 
-                to discontinue any semiconductor product or service 
-                without notice, and advises our customers to obtain the 
-                latest version of relevant information to verify, before 
-                placing orders, that the information being relied on is 
+                TI reserves the right to make changes to our products or
+                to discontinue any semiconductor product or service
+                without notice, and advises our customers to obtain the
+                latest version of relevant information to verify, before
+                placing orders, that the information being relied on is
                 current.
 
-                Please be aware that your receipt and use of the IBIS 
-                information provided shall serve as acceptance of these 
+                Please be aware that your receipt and use of the IBIS
+                information provided shall serve as acceptance of these
                 terms and conditions.  If you do not accept these terms,
-                you should return or destroy the IBIS models and any 
+                you should return or destroy the IBIS models and any
                 other accompanying information immediately.
 
 |**************************************************************************
@@ -66,15 +66,15 @@ C_pkg           0.304pF    0.286pF     0.321pF
 |
 |**************************************************************************
 |
-[Pin]     signal_name     model_name        
+[Pin]     signal_name     model_name
 |
-1           CLKIN           CDCV304_IN              
-2           OE              CDCV304_OE 
-3           1Y0             CDCV304_OUT                   
-4           GND             GND   
+1           CLKIN           CDCV304_IN
+2           OE              CDCV304_OE
+3           1Y0             CDCV304_OUT
+4           GND             GND
 5           1Y1             CDCV304_OUT
 6           VDD             POWER
-7           1Y2             CDCV304_OUT   
+7           1Y2             CDCV304_OUT
 8           1Y3             CDCV304_OUT
 |**************************************************************************
 |                          Model CDCV304_OUT

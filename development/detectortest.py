@@ -22,7 +22,7 @@ for dbm in dbms:
     cir.source_resistance = R("emk","rf",50)
     cir.load_resistance = R("video",0,1e3)
     cir.tran("0.005n",tstop)
-    
+
     videovoltage = cir.voltage("video")[:,1]
     times = cir.voltage("video")[:,0]
     lv = len(videovoltage)
@@ -35,7 +35,7 @@ for dbm in dbms:
 
 pl.show()
 raw_input("press key")
-uavg = array(uavg)   
+uavg = array(uavg)
 pl.clf()
 pl.semilogy()
 pl.plot(dbms, uavg)

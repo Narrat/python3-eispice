@@ -45,4 +45,3 @@ setup(name = 'eispice',
 	package_dir={'': 'module'},
 	packages=[''],
 	extra_path = 'eispice')
-

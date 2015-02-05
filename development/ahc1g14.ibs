@@ -1,12 +1,12 @@
 | ***************************************************
-| Philips Semiconductors Inc. 
-| Logic Products Group 
-| 
+| Philips Semiconductors Inc.
+| Logic Products Group
+|
 | IBIS model of 74AHC1G14
 | SINGLE SCHMITT-TRIGGER INVERTER
-| 
-| 
-|[Packages]: 
+|
+|
+|[Packages]:
 |[Package1]: SOT353 (SC88A) 5-pin Package ;
 |[Package2]: SOT753 (SC74A) 5-pin Package ;
 
@@ -27,8 +27,8 @@
 |                         Editor
 | 1.3     December   2000 RM      Reviewed version for IBIS 3.2
 | 1.4     May        2003 RM      Updated version
-| 
-| Remark: 
+|
+| Remark:
 | The Power Clamp curves have been omitted since there is no power clamp diode.
 |
 [Disclaimer]
@@ -71,13 +71,13 @@
 |********************************************************
 |            Info for  SOT353 (SC88A) 5-pin Package
 |********************************************************
-| 
+|
 [Component]      74AHC1G14_1
 [Manufacturer]   Philips Semiconductors Inc.
-| 
+|
 [package]
 |         typ         min       max
-R_pkg     966.6e-6    950e-6    979e-6 
+R_pkg     966.6e-6    950e-6    979e-6
 L_pkg     390.8e-12   388e-12   393e-12
 C_pkg     69.2e-15    46e-15    127e-15
 |
@@ -88,17 +88,17 @@ C_pkg     69.2e-15    46e-15    127e-15
     3         GND                       GND   967e-6   392e-12   127e-15
     4          Y#                ahc_xgouti   979e-6   391e-12    59e-15
     5         VCC                     POWER   970e-6   390e-12    49e-15
-| 
-| 
-| 
+|
+|
+|
 |
 |********************************************************
 |            Info for  SOT753 (SC74A) 5-pin Package
 |********************************************************
-| 
+|
 [Component]      74AHC1G14_2
 [Manufacturer]   Philips Semiconductors Inc.
-| 
+|
 [package]
 |         typ             min             max
 R_pkg     7.0863E-02      5.8319E-02      8.4334E-02
@@ -112,27 +112,27 @@ C_pkg     8.44E-14        5.30E-14        1.63E-13
     3         GND                       GND 7.08E-02 1.003E-09  1.63E-13
     4          Y#                ahc_xgouti 7.04E-02   8.2E-10  6.30E-14
     5         VCC                     POWER 7.04E-02  8.54E-10  6.90E-14
-| 
-| 
-| 
+|
+|
+|
 [Model Selector]    ahc_xg14in
-| 
-| Remark: If your software does not support the Model Selector 
-|         Please comment out the lines of the Model Selector, which  
-|         contain the name of the Model, except the one you want to use. 
-| 
+|
+| Remark: If your software does not support the Model Selector
+|         Please comment out the lines of the Model Selector, which
+|         contain the name of the Model, except the one you want to use.
+|
 AHC_XG14IN_33        3.3V-Vcc Schmitt-trigger input model
 AHC_XG14IN_50        5.0V-Vcc Schmitt-trigger input model
-| 
+|
 [Model Selector]    ahc_xgouti
-| 
-| Remark: If your software does not support the Model Selector 
-|         Please comment out the lines of the Model Selector, which  
-|         contain the name of the Model, except the one you want to use. 
-| 
+|
+| Remark: If your software does not support the Model Selector
+|         Please comment out the lines of the Model Selector, which
+|         contain the name of the Model, except the one you want to use.
+|
 AHC_XGOUTI_33        3.3V-Vcc inverting output model
 AHC_XGOUTI_50        5.0V-Vcc inverting output model
-| 
+|
 |************************************************************************
 |                              Model AHC_XG14IN_33
 |************************************************************************

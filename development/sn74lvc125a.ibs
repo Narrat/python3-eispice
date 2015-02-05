@@ -21,7 +21,7 @@
 [Comment char]  |_char
 [File Name]     sn74lvc125a.ibs
 [File Rev]      1.1 | k_die
-[Date]          May 23, 2002 
+[Date]          May 23, 2002
 [Source]        Data created from TI-SPICE simulations at TI-SLL.
 [Notes]         The following is an IBIS list for the LVC125A.
                 Please contact sllibis@ti.com with questions and
@@ -33,7 +33,7 @@
                 reproduction and/or distribution is strictly prohibited.
 
                 This product is protected under copyright law.
-                Created  2002, (C) Copyright  2002, Texas Instruments 
+                Created  2002, (C) Copyright  2002, Texas Instruments
                 Incorporated, All Rights Reserved
 
                 UNLESS THERE IS A SIGNED, WRITTEN AGREEMENT TO THE
@@ -196,9 +196,9 @@ C_pkg                                       3.140e-13   2.700e-13   3.350e-13
 |
 [Model Selector]       LVC125A_IN
 |
-LVC125A_IN_18          1.8 volt Vcc  
-LVC125A_IN_25          2.5 volt Vcc  
-LVC125A_IN_33          3.3 volt Vcc  
+LVC125A_IN_18          1.8 volt Vcc
+LVC125A_IN_25          2.5 volt Vcc
+LVC125A_IN_33          3.3 volt Vcc
 |
 |******************************************************************************
 | Model LVC125A_OUT
@@ -206,9 +206,9 @@ LVC125A_IN_33          3.3 volt Vcc
 |
 [Model Selector]       LVC125A_OUT
 |
-LVC125A_OUT_18         1.8 volt Vcc  
-LVC125A_OUT_25         2.5 volt Vcc  
-LVC125A_OUT_33         3.3 volt Vcc  
+LVC125A_OUT_18         1.8 volt Vcc
+LVC125A_OUT_25         2.5 volt Vcc
+LVC125A_OUT_33         3.3 volt Vcc
 |
 |******************************************************************************
 |
@@ -219,9 +219,9 @@ Vinh=1.2675
 |
 | variable                                  typ         min         max
 C_comp                                      2.66pF      2.19pF      3.17pF
-[Temperature Range]                         40          100         -40        
-| Ambient temperature                       25          85          -40        
-[Voltage range]                             1.8         1.65        1.95       
+[Temperature Range]                         40          100         -40
+| Ambient temperature                       25          85          -40
+[Voltage range]                             1.8         1.65        1.95
 |
 |******************************************************************************
 [GND Clamp]
@@ -341,9 +341,9 @@ Vinh=1.7
 |
 | variable                                  typ         min         max
 C_comp                                      2.58pF      2.03pF      3.24pF
-[Temperature Range]                         40          100         -40        
-| Ambient temperature                       25          85          -40        
-[Voltage range]                             2.5         2.3         2.7        
+[Temperature Range]                         40          100         -40
+| Ambient temperature                       25          85          -40
+[Voltage range]                             2.5         2.3         2.7
 |
 |******************************************************************************
 [GND Clamp]
@@ -463,9 +463,9 @@ Vinh=2.0
 |
 | variable                                  typ         min         max
 C_comp                                      2.50pF      1.92pF      3.16pF
-[Temperature Range]                         40          100         -40        
-| Ambient temperature                       25          85          -40        
-[Voltage range]                             3.3         3           3.6        
+[Temperature Range]                         40          100         -40
+| Ambient temperature                       25          85          -40
+[Voltage range]                             3.3         3           3.6
 |
 |******************************************************************************
 [GND Clamp]
@@ -592,9 +592,9 @@ C_comp                                      4.20pF      3.74pF      4.46pF
 | C_pullup                                  6.22pF      4.08pF      7.26pF
 | C_pulldown                                6.43pF      4.61pF      8.40pF
 | C_tri-state                               4.20pF      3.74pF      4.46pF
-[Temperature Range]                         40          100         -40        
-| Ambient temperature                       25          85          -40        
-[Voltage range]                             1.8         1.65        1.95       
+[Temperature Range]                         40          100         -40
+| Ambient temperature                       25          85          -40
+[Voltage range]                             1.8         1.65        1.95
 |
 |
 |******************************************************************************
@@ -1026,26 +1026,26 @@ C_comp                                      4.20pF      3.74pF      4.46pF
                         1.1000e+01          -2.4908e-02 -1.3039e-02 -4.9017e-02
 |
 |******************************************************************************
-[Ramp]                        
+[Ramp]
 | LVC125A_OUT_18
-|                             
+|
 | variable           typ                min                max
 dV/dt_r          1.09/6.33E-10      0.99/1.24E-09      1.21/3.24E-10
 dV/dt_f          1.09/4.85E-10      0.99/8.47E-10      1.19/2.39E-10
-R_load = 1000                   
-|                             
-[Rising Waveform]             
+R_load = 1000
+|
+[Rising Waveform]
 | LVC125A_OUT_18
 |
-R_fixture =     1000                
+R_fixture =     1000
 C_fixture =     0
 L_fixture =     0
-V_fixture =     0               
+V_fixture =     0
 V_fixture_min = 0
 V_fixture_max = 0
-|                             
+|
 |                       Time                 V(typ)      V(min)      V(max)
-|                        
+|
                         0.0000e+00           1.8486e-10  4.6224e-09  1.6252e-11
                         1.9050e-09           3.2263e-04 -2.6335e-05  1.8907e-05
                         2.0400e-09           5.6809e-04  4.2556e-05 -8.8522e-03
@@ -1154,9 +1154,9 @@ V_fixture_max = 0
 R_fixture =     1000
 C_fixture =     0
 L_fixture =     0
-V_fixture =     1.8        
-V_fixture_min = 1.65       
-V_fixture_max = 1.95       
+V_fixture =     1.8
+V_fixture_min = 1.65
+V_fixture_max = 1.95
 |
 |                       Time                 V(typ)      V(min)      V(max)
 |
@@ -1262,18 +1262,18 @@ V_fixture_max = 1.95
                         2.4995e-08           2.7132e-02  4.2421e-02  1.6272e-02
 |
 |******************************************************************************
-[Rising Waveform]          
+[Rising Waveform]
 | LVC125A_OUT_18
 |
 R_fixture =     1000
 C_fixture =     0
 L_fixture =     0
-V_fixture =     1.8        
-V_fixture_min = 1.65       
-V_fixture_max = 1.95       
-|                          
+V_fixture =     1.8
+V_fixture_min = 1.65
+V_fixture_max = 1.95
+|
 |                       Time                 V(typ)      V(min)      V(max)
-|                             
+|
                         0.0000e+00           2.7132e-02  4.2421e-02  1.6272e-02
                         1.9050e-09           2.7411e-02  4.2406e-02  1.6217e-02
                         1.9950e-09           2.7564e-02  4.2428e-02  1.1545e-02
@@ -1505,9 +1505,9 @@ C_comp                                      4.05pF      3.65pF      4.38pF
 | C_pullup                                  6.27pF      4.05pF      7.35pF
 | C_pulldown                                6.07pF      4.35pF      7.85pF
 | C_tri-state                               4.05pF      3.65pF      4.38pF
-[Temperature Range]                         40          100         -40        
-| Ambient temperature                       25          85          -40        
-[Voltage range]                             2.5         2.3         2.7        
+[Temperature Range]                         40          100         -40
+| Ambient temperature                       25          85          -40
+[Voltage range]                             2.5         2.3         2.7
 |
 |
 |******************************************************************************
@@ -1939,26 +1939,26 @@ C_comp                                      4.05pF      3.65pF      4.38pF
                         1.1000e+01          -5.2498e-02 -2.9582e-02 -9.5285e-02
 |
 |******************************************************************************
-[Ramp]                        
+[Ramp]
 | LVC125A_OUT_25
-|                             
+|
 | variable           typ                min                max
 dV/dt_r          1.47/3.69E-10      1.33/7.19E-10      1.61/2.23E-10
 dV/dt_f          1.50/3.06E-10      1.36/5.53E-10      1.63/1.74E-10
-R_load = 500                   
-|                             
-[Rising Waveform]             
+R_load = 500
+|
+[Rising Waveform]
 | LVC125A_OUT_25
 |
-R_fixture =     500                
+R_fixture =     500
 C_fixture =     0
 L_fixture =     0
-V_fixture =     0               
+V_fixture =     0
 V_fixture_min = 0
 V_fixture_max = 0
-|                             
+|
 |                       Time                 V(typ)      V(min)      V(max)
-|                        
+|
                         0.0000e+00           1.6940e-10  3.6626e-09  1.7908e-11
                         1.6450e-09           2.7467e-04 -2.4509e-06  6.6992e-04
                         1.7300e-09           6.4039e-04  1.1299e-04 -1.8766e-03
@@ -2067,9 +2067,9 @@ V_fixture_max = 0
 R_fixture =     500
 C_fixture =     0
 L_fixture =     0
-V_fixture =     2.5        
-V_fixture_min = 2.3        
-V_fixture_max = 2.7        
+V_fixture =     2.5
+V_fixture_min = 2.3
+V_fixture_max = 2.7
 |
 |                       Time                 V(typ)      V(min)      V(max)
 |
@@ -2175,18 +2175,18 @@ V_fixture_max = 2.7
                         2.4995e-08           5.7328e-02  8.4965e-02  3.5942e-02
 |
 |******************************************************************************
-[Rising Waveform]          
+[Rising Waveform]
 | LVC125A_OUT_25
 |
 R_fixture =     500
 C_fixture =     0
 L_fixture =     0
-V_fixture =     2.5        
-V_fixture_min = 2.3        
-V_fixture_max = 2.7        
-|                          
+V_fixture =     2.5
+V_fixture_min = 2.3
+V_fixture_max = 2.7
+|
 |                       Time                 V(typ)      V(min)      V(max)
-|                             
+|
                         0.0000e+00           5.7328e-02  8.4965e-02  3.5942e-02
                         1.6550e-09           5.7596e-02  8.4976e-02  3.6373e-02
                         1.7800e-09           5.8072e-02  8.5129e-02  2.9742e-02
@@ -2418,9 +2418,9 @@ C_comp                                      3.92pF      3.51pF      4.34pF
 | C_pullup                                  6.19pF      3.92pF      7.71pF
 | C_pulldown                                5.66pF      4.14pF      7.27pF
 | C_tri-state                               3.92pF      3.51pF      4.34pF
-[Temperature Range]                         40          100         -40        
-| Ambient temperature                       25          85          -40        
-[Voltage range]                             3.3         3           3.6        
+[Temperature Range]                         40          100         -40
+| Ambient temperature                       25          85          -40
+[Voltage range]                             3.3         3           3.6
 |
 |
 |******************************************************************************
@@ -2852,26 +2852,26 @@ C_comp                                      3.92pF      3.51pF      4.34pF
                         1.1000e+01          -9.0962e-02 -5.2816e-02 -1.5754e-01
 |
 |******************************************************************************
-[Ramp]                        
+[Ramp]
 | LVC125A_OUT_33
-|                             
+|
 | variable           typ                min                max
 dV/dt_r          1.95/2.68E-10      1.75/4.91E-10      2.15/1.67E-10
 dV/dt_f          1.97/2.29E-10      1.77/4.09E-10      2.16/1.56E-10
-R_load = 500                   
-|                             
-[Rising Waveform]             
+R_load = 500
+|
+[Rising Waveform]
 | LVC125A_OUT_33
 |
-R_fixture =     500                
+R_fixture =     500
 C_fixture =     0
 L_fixture =     0
-V_fixture =     0               
+V_fixture =     0
 V_fixture_min = 0
 V_fixture_max = 0
-|                             
+|
 |                       Time                 V(typ)      V(min)      V(max)
-|                        
+|
                         0.0000e+00           1.7639e-10  3.3985e-09  2.0941e-11
                         1.9200e-09           8.0361e-04  3.0040e-04 -3.1791e-04
                         2.0300e-09          -2.4851e-03  7.2302e-04 -1.4600e-02
@@ -2980,9 +2980,9 @@ V_fixture_max = 0
 R_fixture =     500
 C_fixture =     0
 L_fixture =     0
-V_fixture =     3.3        
-V_fixture_min = 3          
-V_fixture_max = 3.6        
+V_fixture =     3.3
+V_fixture_min = 3
+V_fixture_max = 3.6
 |
 |                       Time                 V(typ)      V(min)      V(max)
 |
@@ -3088,18 +3088,18 @@ V_fixture_max = 3.6
                         2.4995e-08           6.4516e-02  9.2104e-02  4.1933e-02
 |
 |******************************************************************************
-[Rising Waveform]          
+[Rising Waveform]
 | LVC125A_OUT_33
 |
 R_fixture =     500
 C_fixture =     0
 L_fixture =     0
-V_fixture =     3.3        
-V_fixture_min = 3          
-V_fixture_max = 3.6        
-|                          
+V_fixture =     3.3
+V_fixture_min = 3
+V_fixture_max = 3.6
+|
 |                       Time                 V(typ)      V(min)      V(max)
-|                             
+|
                         0.0000e+00           6.4516e-02  9.2104e-02  4.1933e-02
                         1.9100e-09           6.5193e-02  9.2340e-02  4.1749e-02
                         2.0200e-09           6.2714e-02  9.2683e-02  2.9603e-02

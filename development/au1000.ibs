@@ -1,19 +1,19 @@
 |************************************************************************
-| IBIS file au1000.ibs 
+| IBIS file au1000.ibs
 |************************************************************************
 |
 [IBIS ver]       2.1
 [File name]      au1000.ibs
 [File Rev]       1.1
-[Date]           September 30, 2002 
+[Date]           September 30, 2002
 [Source]         Advanced Micro Devices
 |
-[Notes]          This model assumes an "8ma" driver for the SDCLK* pins. 
+[Notes]          This model assumes an "8ma" driver for the SDCLK* pins.
                  Depending on your configuration, you may want to select
                  the "4ma" or "12ma" option.
                  The 4 crystal pins have been commented-out.
                  Please contact technical support at Advanced Micro Devices
-                 for any & all questions, comments, and/or suggestions 
+                 for any & all questions, comments, and/or suggestions
                  related to this model.
 |
 [Disclaimer]     YOU UNDERSTAND THIS INFORMATION HAS NOT BEEN
@@ -22,10 +22,10 @@
                  INACCURACIES.  THIS INFORMATION IS FOR
                  NONCOMMERCIAL MODELING PURPOSES ONLY AND IS
                  PROVIDED AND ACCEPTED "WHERE IS" AND "AS IS" WITH
-                 NO WARRANTY, INDEMNITY, OR FURTHER OBLIGATION. 
+                 NO WARRANTY, INDEMNITY, OR FURTHER OBLIGATION.
                  AMD DOES NOT WARRANT THAT THIS INFORATION IS
                  WITHOUT DEFECT OR THAT THE OPERATION OF THE
-                 TECHNOLOGY WILL BE UNINTERRUPTED OR ERROR-FREE. 
+                 TECHNOLOGY WILL BE UNINTERRUPTED OR ERROR-FREE.
                  ALL RISK ARISING OUT OF USE OF THIS INFORMATION
                  REMAINS WITH YOU.  AMD DISCLAIMS ANY AND ALL
                  WARRANTIES RELATING TO THIS INFORMATION, EXPRESS
@@ -38,20 +38,20 @@
                  CONSEQUENTIAL DAMAGES WHATSOEVER EVEN IF AMD
                  HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
                  DAMAGES.  YOUR USE OF THIS INFORMATION IS
-                 CONTINGENT UPON YOUR ACCEPTANCE OF THESE TERMS. 
+                 CONTINGENT UPON YOUR ACCEPTANCE OF THESE TERMS.
                  AMD RESERVES THE RIGHT TO MODIFY AND/OR
                  WITHDRAW THIS INFORMATION AT ANY TIME FOR ANY OR
                  NO REASON.
 |
 [Copyright]      Copyright 2002 Advanced Micro Devices
-                 All Rights Reserved  
+                 All Rights Reserved
 |
 |************************************************************************
-|                       Component Au1000  
+|                       Component Au1000
 |************************************************************************
 |
 [Component]      AU1000
-[Manufacturer]   Alchemy Semiconductor Inc. 
+[Manufacturer]   Alchemy Semiconductor Inc.
 [Package]
 |                324-PIN LBGA
 | variable       typ                 min                 max
@@ -1414,7 +1414,7 @@ C_comp           1.25pF              1.20pF              1.30pF
 |
 [Ramp]
 | variable       typ                 min                 max
-dV/dt_r          1.62/0.21ns         1.08/0.27ns         1.67/0.14ns        
+dV/dt_r          1.62/0.21ns         1.08/0.27ns         1.67/0.14ns
 dV/dt_f          1.67/0.23ns         1.22/0.34ns         1.76/0.15ns
 R_load = 0.10k
 |
