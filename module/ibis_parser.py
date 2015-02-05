@@ -100,7 +100,8 @@ class _Builder:
     def process(self):
         for line in iter(self.fdin.readline, ''):
             if self._process(line) is Done:
-                self.fdin.seek(-len(line),1)
+                pos = int(self.fdin.tell()) - len(line)
+                self.fdin.seek(pos,0)
                 break
 
     def handleName(self, key, name):
@@ -114,7 +115,8 @@ class _Builder:
                 name = name + '\n'
                 name = name + line.strip()
             else:
-                self.fdin.seek(-len(line),1)
+                pos = int(self.fdin.tell()) - len(line)
+                self.fdin.seek(pos,0)
                 break
         key = key.replace(" ","_").lower()
         setattr(self, key, name)
@@ -542,7 +544,7 @@ class Ibis_Parser(_Builder):
             self.fdin = io.StringIO(ibis_test.ibis_test)
         else:
             filename = os.path.join(sys.path[0], filename)
-            self.fdin = open(filename, 'rb')
+            self.fdin = open(filename, 'r')
 
         self.addRE(_reLabeled % "ibis[ _]ver", self.handleName)
         # Todo: Make this comment char thing work
