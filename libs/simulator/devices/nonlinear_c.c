@@ -302,6 +302,12 @@ static int deviceClassInitStep(device_ *r)
 
 /*---------------------------------------------------------------------------*/
 
+static int deviceClassLoadVariable(variable_ *r, devicePrivate_ *p)
+{
+	r->R = 0.0;
+	return 0;
+}
+
 static int deviceClassLoad(device_ *r)
 {
 	devicePrivate_ *p;
@@ -317,6 +323,8 @@ static int deviceClassLoad(device_ *r)
 	p->Cn = 0.0;
 	p->Ceq = 0.0;
 	p->CeqCalc = 0.0;
+	ReturnErrIf(listExecute(p->variables,
+			(listExecute_)deviceClassLoadVariable, p));
 
 	/* Modified Nodal Analysis Stamp (Open)
 	 *	                  	+      -

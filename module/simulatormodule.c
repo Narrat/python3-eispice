@@ -1155,6 +1155,61 @@ static PyMemberDef cbSourceMembers[] = {
 
 /*---------------------------------------------------------------------------*/
 
+// see https://github.com/numpy/numpy/pull/14100/files
+#define XXXPyArray_FromDimsAndData(nd, d, type, data)                            \
+        XXXPyArray_FromDimsAndDataAndDescr(nd, d, PyArray_DescrFromType(type),   \
+                                        data)
+
+static NPY_NO_EXPORT PyObject *
+XXXPyArray_FromDimsAndDataAndDescr(int nd, int *d,
+                                PyArray_Descr *descr,
+                                char *data)
+{
+    PyObject *ret;
+    int i;
+    npy_intp newd[NPY_MAXDIMS];
+    char msg[] = "XXXPyArray_FromDimsAndDataAndDescr: use PyArray_NewFromDescr.";
+
+    if (DEPRECATE(msg) < 0) {
+        /* 2009-04-30, 1.5 */
+        return NULL;
+    }
+    if (!PyArray_ISNBO(descr->byteorder))
+        descr->byteorder = '=';
+    for (i = 0; i < nd; i++) {
+        newd[i] = (npy_intp) d[i];
+    }
+    ret = PyArray_NewFromDescr(&PyArray_Type, descr,
+                               nd, newd,
+                               NULL, data,
+                               (data ? NPY_ARRAY_CARRAY : 0), NULL);
+    return ret;
+}
+
+static NPY_NO_EXPORT PyObject *
+XXXPyArray_FromDims(int nd, int *d, int type)
+{
+    PyArrayObject *ret;
+    char msg[] = "XXXPyArray_FromDims: use PyArray_SimpleNew.";
+
+    if (DEPRECATE(msg) < 0) {
+        /* 2009-04-30, 1.5 */
+        return NULL;
+    }
+    ret = (PyArrayObject *)XXXPyArray_FromDimsAndDataAndDescr(nd, d,
+                                          PyArray_DescrFromType(type),
+                                          NULL);
+    /*
+     * Old FromDims set memory to zero --- some algorithms
+     * relied on that.  Better keep it the same. If
+     * Object type, then it's already been set to zero, though.
+     */
+    if (ret && (PyArray_DESCR(ret)->type_num != NPY_OBJECT)) {
+        memset(PyArray_DATA(ret), 0, PyArray_NBYTES(ret));
+    }
+    return (PyObject *)ret;
+}
+
 static int cbSourceInit(cbSource_ *r, PyObject *args, PyObject *kwds)
 {
     PyObject *pNode, *nNode;
@@ -1179,11 +1234,11 @@ static int cbSourceInit(cbSource_ *r, PyObject *args, PyObject *kwds)
     length = PyTuple_Size(r->variables);
     ReturnErrIf(length <= 0);
 
-    r->derivs = (PyArrayObject*)PyArray_FromDims(1, &length, PyArray_DOUBLE);
+    r->derivs = (PyArrayObject*)XXXPyArray_FromDims(1, &length, PyArray_DOUBLE);
     ReturnErrIf(r->derivs == NULL);
     Py_INCREF(r->derivs);
 
-    r->values = (PyArrayObject*)PyArray_FromDims(1, &length, PyArray_DOUBLE);
+    r->values = (PyArrayObject*)XXXPyArray_FromDims(1, &length, PyArray_DOUBLE);
     ReturnErrIf(r->values == NULL);
     Py_INCREF(r->values);
 
@@ -1462,7 +1517,7 @@ static void circuitDestroy(circuit_ *r)
 static int circuitBuildResults(circuit_ *r, double *data, int dims[2])
 {
     Py_XDECREF(r->results);
-    r->results = (PyArrayObject*)PyArray_FromDimsAndData(2, dims,
+    r->results = (PyArrayObject*)XXXPyArray_FromDimsAndData(2, dims,
             PyArray_DOUBLE, (char*)data);
     ReturnErrIf(r->results == NULL);
     /* We own the data, should free it when we're done with it. */
