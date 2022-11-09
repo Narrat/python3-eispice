@@ -167,12 +167,12 @@ class Plot(tk.Canvas):
         self.colours = ['red', 'navy', 'green', 'orange', 'purple',
                 'cyan', 'magenta',  'yellow', 'darkred']
 
-        if legend == None:
+        if legend is None:
             self.legend = []
         else:
             self.legend = legend
 
-        if data == None:
+        if data is None:
             self.data = []
         else:
             self.data = data
@@ -372,7 +372,7 @@ def plot(*lst):
 
     for circuit in lst:
 
-        if circuit.results == None:
+        if circuit.results is None:
             raise RuntimeError("Circuit %s has no results." % circuit.title)
 
         try:

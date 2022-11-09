@@ -223,6 +223,12 @@ static int deviceClassLinearize(device_ *r, int *linear)
 
 /*---------------------------------------------------------------------------*/
 
+static int deviceClassLoadVariable(variable_ *r, devicePrivate_ *p)
+{
+	r->G = 0.0;
+	return 0;
+}
+
 static int deviceClassLoad(device_ *r)
 {
 	devicePrivate_ *p;
@@ -240,6 +246,8 @@ static int deviceClassLoad(device_ *r)
 	p->In = 0.0;
 	p->Ieq = 0.0;
 	p->IeqCalc = 0.0;
+	ReturnErrIf(listExecute(p->variables,
+			(listExecute_)deviceClassLoadVariable, p));
 
 	/* Modified Nodal Analysis Stamp Current Source
 	 *	                     	  		+  /\ - + __  -
